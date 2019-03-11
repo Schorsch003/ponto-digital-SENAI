@@ -1,43 +1,42 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: content-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.container{
+.container {
     width: 100vw;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.navegacao{
+.navegacao {
     background-color: #4aa2d8;
     height: 15vh;
     justify-content: space-between;
     align-items: center;
     font-family: Rockwell;
     font-weight: bold;
-    font-size:1.7em;
+    font-size: 1.7em;
     border-bottom: 1px solid #696969;
 }
 
-.navegacao img{
+.navegacao img {
     height: 100%;
-    margin-left:3em;
+    margin-left: 3em;
 }
 
-
-.navegacao ul{
+.navegacao ul {
     margin: 0 3em 0 1em;
 }
 
-.navegacao li{
+.navegacao li {
     padding: 2em;
     list-style: none;
 }
@@ -47,12 +46,43 @@ a{
     padding: 0.5em;
 }
 
-.navegacao a:hover{
+.navegacao a:hover {
     border-bottom: 2px solid black;
     padding-bottom: 0.5em;
 }
 
-
-#login{
+#login {
     margin-right: 3em;
+}
+
+.banner {
+    justify-content: center;
+    height: 70vh;
+    background-image: url("../img/layer2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#caixa {
+    display: flex;
+    justify-content: space-between;
+    padding: 3em;
+    border: 3px solid black;
+    background-image: url("../css/fundo_caixa_home.png");
+    /* background-color: #9999cc; */
+    height: 30%;
+    width: 40%;
+    margin: auto;
+}
+
+#caixa img {
+    height: 100%;
+    padding: 0 2em;
+}
+
+#caixa h2 {
+    font-family: 'Sui Generis Free';
+    font-size: 3em;
+    color: white;
+    margin: auto 1em auto 6em;
 }
