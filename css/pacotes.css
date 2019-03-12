@@ -17,3 +17,42 @@
     padding: 1.5em;
     text-align: center;
 }
+
+.conj_box{
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+.pac_box h3{
+    text-align: center;
+}
+
+.pac_box h4{
+    color:white;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.pac_box{
+    padding:3em;
+    margin-bottom: 2em;
+    background-color: #00347f;
+}
+
+.pac_box ul{
+    padding-bottom: 2em;
+}
+
+.pac_box li{
+    padding: 0.3em 0;
+}
+
+.comprar{
+    background-color:#001837;
+    margin: auto;    
+    padding: 1em 2em;
+    color:white;  
+    border-radius: 10px;
+    font-size: 1.5em; 
+}

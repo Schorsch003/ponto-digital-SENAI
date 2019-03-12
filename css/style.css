@@ -35,6 +35,14 @@ ul{
     border-bottom: 1px solid #696969;
 }
 
+#logo_img{
+    height: 100%;
+}
+
+#logo_img:hover{
+    border:none;
+}
+
 .navegacao img {
     height: 100%;
     margin-left: 3em;
