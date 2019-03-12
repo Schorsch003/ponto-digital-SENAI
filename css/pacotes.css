@@ -1,0 +1,19 @@
+.pacotes{
+    background-color: #889ead;
+
+}
+
+.introd{
+    padding-top: 1.5em;
+}
+
+.introd h2{
+    color:white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.introd p{
+    padding: 1.5em;
+    text-align: center;
+}
