@@ -144,3 +144,33 @@ ul{
     justify-content: space-between;
     padding: 1em 0;
 }
+
+.rodape h2{
+    color:white;
+}
+
+.rodape a, p{
+    color:whitesmoke;
+}
+
+
+.quem_somos{
+    margin-left:3em;
+}
+
+.rodape h2{
+    padding-bottom:0.5em;
+}
+
+.rodape li,p{
+    padding-bottom: 0.2em;
+}
+
+.pacotes_foot{
+    margin-right: 50%;
+}
+
+.SAC{
+    margin-right:3em;
+}
+
