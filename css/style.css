@@ -8,12 +8,20 @@ a {
     text-decoration: none;
 }
 
+ul{
+    list-style: none;
+}
+
 .container {
     width: 100vw;
 }
 
 .flex {
     display: flex;
+}
+
+.unflex{
+    display: block;
 }
 
 .navegacao {
@@ -68,10 +76,9 @@ a {
     justify-content: space-between;
     padding: 3em;
     border: 3px solid black;
-    background-image: url("../css/fundo_caixa_home.png");
-    /* background-color: #9999cc; */
+    background-image: url("../img/fundo_caixa_home.png");
     height: 30%;
-    width: 40%;
+    width: 45%;
     margin: auto;
 }
 
@@ -85,4 +92,55 @@ a {
     font-size: 3em;
     color: white;
     margin: auto 1em auto 6em;
+}
+
+.infos{
+    background-color: #568bac;
+
+}
+
+.bloco{
+    justify-content: space-around;
+    padding: 2em 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100vw;
+}
+
+.bloco img{
+    padding-left: 3em;
+
+} 
+
+.bloco div > h2{
+    color: white;
+    font-size:2em;
+}
+
+.bloco div > p{
+    color:white;
+    margin-top: 0.5em;
+    width: 70%;
+}
+
+.invertido{
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.invertido h2{
+    padding-left: 91%;
+}
+
+.invertido p{
+    padding-left:30%;
+}
+
+.invertido img{
+    padding-right:3em;
+}
+
+.rodape{
+    background-color:#002446;
+    justify-content: space-between;
+    padding: 1em 0;
 }
