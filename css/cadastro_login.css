@@ -7,6 +7,7 @@
     text-align: center;
     color: white;
     font-size: 2.5em;
+    margin-bottom: 1.5em;
 }
 
 .formulario input{
@@ -14,17 +15,34 @@
     width: 30vw;
     border-radius:20px;
     margin: 1em 0;
+    border: solid black 1px;
+    font-weight: bold;
+    padding-left:1.5em;
+    padding-left: 1em;
+    
 }
+
 
 .forms{
     display:flex;
     justify-content: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+    color:rgb(0, 0, 0);
 }
 
 .formulario input[type="submit"]{
     width: 15vw;
+    border-radius: 5px;
+    background-color: #00347f;
+    color:white;
+    margin: 3em 25%;
+    
 }
 
 .formulario ::placeholder{
     padding-left: 1em;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color:rgba(0, 0, 0, 0.363);
 }
