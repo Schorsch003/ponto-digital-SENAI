@@ -13,7 +13,7 @@ ul{
 }
 
 .container {
-    width: 100vw;
+    width:  100%;
 }
 
 .flex {
@@ -33,7 +33,7 @@ ul{
     font-weight: bold;
     font-size: 1.7em;
     border-bottom: 1px solid #696969;
-}
+  }
 
 #logo_img{
     height: 100%;
@@ -111,7 +111,7 @@ ul{
     justify-content: space-around;
     padding: 2em 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100vw;
+    width:  100%;
 }
 
 .bloco img{
