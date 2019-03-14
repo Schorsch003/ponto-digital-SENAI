@@ -1,0 +1,73 @@
+#textarea1{
+    resize: none;
+}
+
+.conteudo{
+    height: 70vh;
+}
+
+
+.conteudo h2{
+    text-align: start;
+    margin-left: 2em;
+}
+
+.conteudo form{
+    padding-left: 4em;
+}
+
+.conteudo form input{
+    margin-bottom: 1em;
+    width:22.2em;
+}
+
+.conteudo form input[type="submit"]{
+    width: 5em;
+    margin-top: 1em;
+    margin-left:17em;
+    
+}
+
+.rating{
+    margin:0  0 2em 5em;
+}
+
+.rating label{
+    padding:1em 10px;    
+}
+
+.rating {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.rating > input:checked ~ label {
+    color: #ffc700;    
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}

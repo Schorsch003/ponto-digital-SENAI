@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/avaliacoes.css">
+    <title>Avaliações - Ponto Digital</title>
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navegacao flex">
+            <a href="index.html" id="logo_img">
+                <img src="img/logo.png" alt="Logotipo do Ponto Digital">
+            </a>
+
+            <ul class="flex" id="nav_menu">
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="avaliacoes.html">Avaliações</a></li>
+            </ul>
+            <div id="login" class="flex">
+                <a href="login.html">Login</a>
+                <a href="cadastro.html">Cadastro</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <h2>Deixe sua avaliação do produto</h2>
+        <!--ESTILIZAR 5-STAR RATING -->
+        <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+            </div>
+            <br>
+            <BR><BR></BR></BR>
+            <form action="" method="post">
+                <input type="text" name="nome" id="nome_avaliacao" placeholder="Nome">
+                <br />
+                
+                <textarea name="" id="textarea1" cols="40" rows="20" placeholder="Deixe seu comentário"></textarea>
+                <br />
+                <input type="submit" value="►">
+            </form>
+            
+
+
+    </main>
+
+    <footer class="rodape flex">
+        <div class="quem_somos">
+            <h2>Agora Vai!</h2>
+            <a href="quem_somos.html">Quem somos?</a>
+        </div>
+
+        <div class="pacotes_foot">
+            <h2>Pacotes</h2>
+            <ul>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+        </div>
+
+        <div class="SAC">
+            <a href="#">
+                <h2>SAC</h2>
+            </a>
+            <p>emailpontodigital@email.com</p>
+            <p>(11) 12345-6789</p>
+            <p>Alameda Barão de Limeira, 539</p>
+        </div>
+    </footer>
+</body>
+
+</html>
