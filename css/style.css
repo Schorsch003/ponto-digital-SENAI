@@ -24,6 +24,25 @@ ul{
     display: block;
 }
 
+.conteudo{
+    background-color:#889ead;
+    justify-content: space-around;
+}
+
+
+.conteudo p{
+    color: white;
+    margin-left: 1.5em;
+    font-size: 1.3em;
+}
+
+.conteudo h2 {
+    color:white;    
+    text-align: center;
+    font-size:2em;
+    padding:0.5em 0;
+}
+
 .navegacao {
     background-color: #4aa2d8;
     height: 15vh;

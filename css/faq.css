@@ -1,0 +1,43 @@
+.pesquisar{
+    justify-content: space-between;
+}
+
+.pesquisar input,select{
+    height: 2.3em;
+    width: 30em;
+    margin:1em 3.5em;
+    border: thick 1px black;
+}
+
+
+.perguntas{
+    height: 80%; 
+    padding: 2em 0;
+}
+
+.pergunta{
+    display:flex;
+    height:12em;
+    width: 95%;
+    border:solid 1px black;
+    margin: 0 auto;
+    background-color:white;
+}
+
+.pergunta img{
+    width: 15%; 
+    border-right:solid 2px black;
+    padding: 3em 0.5em;
+}
+
+.pergunta h3{
+    margin:1em 0 0.5em 1em;
+    font-size:1.3em;
+}
+
+.pergunta p{
+    width: 90%;
+    
+    font-size: 1em;
+    color:black;
+}
