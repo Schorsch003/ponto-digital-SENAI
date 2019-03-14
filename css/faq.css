@@ -6,9 +6,9 @@
     height: 2.3em;
     width: 30em;
     margin:1em 3.5em;
-    border: thick 1px black;
+    border: solid 1px black;
+    padding-left: 1em;
 }
-
 
 .perguntas{
     height: 80%; 
@@ -37,7 +37,6 @@
 
 .pergunta p{
     width: 90%;
-    
     font-size: 1em;
     color:black;
 }
