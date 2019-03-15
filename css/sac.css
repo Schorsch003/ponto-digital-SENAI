@@ -2,3 +2,44 @@ main{
     height: 90vh;
 }
 
+.conteudo_sac{
+    margin-left: 4em;
+}
+
+.conteudo h3{
+    font-size:2em;
+    color:white;
+}
+.titulos{
+    margin:1em 0;
+}
+
+.reclamacao{
+    width: 90%;
+    background-color: white;
+    border:1px solid black;
+}
+
+.reclamacao input{
+    height: 3em;
+}
+
+.reclamacao input::placeholder{
+    padding-left:1em;
+}
+
+.reclamacao input, textarea{
+    width:100%;
+    border:1px solid black;
+}
+
+#imagens_btn{
+    margin-left: 90%;
+}
+
+#imagens_btn button{
+    border:none;
+    background-color: white;
+    padding: 0 1em;
+    border:1px thin black; 
+}
