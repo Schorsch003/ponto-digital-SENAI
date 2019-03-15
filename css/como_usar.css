@@ -2,3 +2,43 @@
     text-align: start;
 }
 
+.video_atual{
+    width:50%;
+    height:50vh;
+    padding: 2em 3em 1em 25em;
+}
+
+.video_atual h2{
+    text-align: center;
+}
+
+
+.video_atual iframe{
+    padding: 2em 5em;
+}
+
+.prox_vid{  
+    background-color: #293846;
+    width: fit-content;
+    color: white;
+    margin: 0 auto;
+    /* margin-bottom: 1em; */
+    text-align: center;
+
+}
+
+.prox_vid iframe{
+    padding: 2em;
+}
+
+.sugestoes{
+        background-color: #293846;
+        width: fit-content;
+        color: white;
+        margin-left: 85%;
+        text-align: center;
+}
+
+.sugestoes iframe{
+    padding: 2em;
+}
