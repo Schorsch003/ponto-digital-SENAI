@@ -10,6 +10,14 @@
     padding-left: 1em;
 }
 
+.pesquisar input{
+    background-image: url("../img/search_icon.png");
+    background-repeat: no-repeat;
+    background-position:98% 50%;
+
+    
+}
+
 .perguntas{
     height: 80%; 
     padding: 2em 0;
