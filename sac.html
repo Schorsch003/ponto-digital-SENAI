@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sac.css">
-    <title>SAC - Ponto Digital</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Home - Ponto Digital</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 
             <ul class="flex" id="nav_menu">
                 <li><a href="pacotes.html">Pacotes</a></li>
-                <li><a href="#">Como usar</a></li>
+                <li><a href="como_usar_v2.html">Como usar</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="avaliacoes.html">Avaliações</a></li>
             </ul>
@@ -26,7 +26,10 @@
                 <a href="login.html">Login</a>
                 <a href="cadastro.html">Cadastro</a>
             </div>
+            <span id="menu_btn">M</span>
+
         </nav>
+
     </header>
     <main class="conteudo container">
         <h2>SAC</h2>
@@ -39,19 +42,19 @@
             <section class="reclamacao">
                 <form action="" method="post">
                     <input type="text" id="nome" placeholder="Nome">
-                <br>    
-                <input type="text" name="assunto" id="assunto" placeholder="Asssunto">
-                <br>
-                <textarea name="area_text" id="area_texto" cols="400" rows="30" style="resize:none"></textarea>
-                <br>
-                <div id="imagens_btn">
-                    <button id="send"><img src="img/anexar.png" alt=""></button>
-                    <button id="send"><img src="img/enviar_sac.png" alt=""></button>
-                </div>
-            </form>
-        </section>
-    </div>
-        
+                    <br>
+                    <input type="text" name="assunto" id="assunto" placeholder="Asssunto">
+                    <br>
+                    <textarea name="area_text" id="area_texto" cols="400" rows="30" style="resize:none"></textarea>
+                    <br>
+                    <div id="imagens_btn">
+                        <button id="send"><img src="img/anexar.png" alt=""></button>
+                        <button id="send"><img src="img/enviar_sac.png" alt=""></button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
     </main>
     <footer class="rodape flex">
         <div class="quem_somos">
@@ -71,7 +74,7 @@
         </div>
 
         <div class="SAC">
-            <a href="#">
+            <a href="sac.html">
                 <h2>SAC</h2>
             </a>
             <p>emailpontodigital@email.com</p>
@@ -79,4 +82,8 @@
             <p>Alameda Barão de Limeira, 539</p>
         </div>
     </footer>
+
+
 </body>
+
+</html>

@@ -1,0 +1,39 @@
+.conteudo{
+    height: 85vh;
+}
+
+.conteudo p{
+    width: 60%;
+    line-height: 1.4em;
+    margin:1em 2em;
+}
+
+.conteudo img{
+    width:30%;
+    margin-right: 2em;
+}
+
+.teste{
+    justify-content: space-around;
+    margin: 1em 0 2em 0;
+}
+
+.topicos{
+    justify-content: space-around;
+}
+
+.topicos ul{
+    margin: 1em 3em;
+}
+
+.topicos_relacionados h3{
+    text-align: center;
+    margin-bottom: 2em;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.50em;
+}
+
+.topicos li{
+    width: 10%;
+}

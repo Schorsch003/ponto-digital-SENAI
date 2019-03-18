@@ -8,39 +8,42 @@ a {
     text-decoration: none;
 }
 
-ul{
+span {
+    display: none;
+}
+
+ul {
     list-style: none;
 }
 
 .container {
-    width:  100%;
+    width: 100%;
 }
 
 .flex {
     display: flex;
 }
 
-.unflex{
+.unflex {
     display: block;
 }
 
-.conteudo{
-    background-color:#889ead;
+.conteudo {
+    background-color: #889ead;
     justify-content: space-around;
 }
 
-
-.conteudo p{
+.conteudo p {
     color: white;
     margin-left: 1.5em;
     font-size: 1.3em;
 }
 
 .conteudo h2 {
-    color:white;    
+    color: white;
     text-align: center;
-    font-size:2em;
-    padding:0.5em 0;
+    font-size: 2em;
+    padding: 0.5em 0;
 }
 
 .navegacao {
@@ -52,14 +55,14 @@ ul{
     font-weight: bold;
     font-size: 1.7em;
     border-bottom: 1px solid #696969;
-  }
+}
 
-#logo_img{
+#logo_img {
     height: 100%;
 }
 
-#logo_img:hover{
-    border:none;
+#logo_img:hover {
+    border: none;
 }
 
 .navegacao img {
@@ -96,6 +99,7 @@ ul{
     background-image: url("../img/layer2.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    position: relative;
 }
 
 #caixa {
@@ -107,97 +111,205 @@ ul{
     height: 30%;
     width: 45%;
     margin: auto;
+    position: relative;
 }
 
 #caixa img {
-    height: 100%;
-    padding: 0 2em;
+    height: 90%;
+    padding: 0 5em;
+    position: absolute;
+    bottom: 10px;
+    left: 20px
 }
 
 #caixa h2 {
+    position: absolute;
     font-family: 'Sui Generis Free';
     font-size: 3em;
     color: white;
-    margin: auto 1em auto 6em;
+    margin: 1em 1em auto 7.5em;
+    left: 20%;
 }
 
-.infos{
+.infos {
     background-color: #568bac;
-
 }
 
-.bloco{
+.bloco {
     justify-content: space-around;
     padding: 2em 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width:  100%;
+    width: 100%;
 }
 
-.bloco img{
+.bloco img {
     padding-left: 3em;
-
-} 
-
-.bloco div > h2{
-    color: white;
-    font-size:2em;
 }
 
-.bloco div > p{
-    color:white;
+.bloco div>h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.bloco div>p {
+    color: white;
     margin-top: 0.5em;
     width: 70%;
 }
 
-.invertido{
+.invertido {
     flex-direction: row-reverse;
     justify-content: space-around;
 }
 
-.invertido h2{
+.invertido h2 {
     padding-left: 91%;
 }
 
-.invertido p{
-    padding-left:30%;
+.invertido p {
+    padding-left: 30%;
 }
 
-.invertido img{
-    padding-right:3em;
+.invertido img {
+    padding-right: 3em;
 }
 
-.rodape{
-    background-color:#002446;
+.rodape {
+    height: 10em;
+    background-color: #002446;
     justify-content: space-between;
     padding: 1em 0;
 }
 
-.rodape h2{
-    color:white;
+.rodape h2 {
+    color: white;
 }
 
-.rodape a, p{
-    color:whitesmoke;
+.rodape a, p {
+    color: whitesmoke;
 }
 
-
-.quem_somos{
-    margin-left:3em;
+.quem_somos {
+    margin-left: 3em;
 }
 
-.rodape h2{
-    padding-bottom:0.5em;
+.rodape h2 {
+    padding-bottom: 0.5em;
 }
 
-.rodape li,p{
+.rodape li, p {
     padding-bottom: 0.2em;
 }
 
-.pacotes_foot{
+.pacotes_foot {
     margin-right: 50%;
 }
 
-.SAC{
-    margin-right:3em;
+.SAC {
+    margin-right: 3em;
 }
 
+@media (max-width:768px) {
+    .navegacao ul, .navegacao div {
+        display: none;
+    }
+    #login {
+        display: none;
+    }
+    #caixa {
+        display: block;
+        height: 30%;
+        width: 70%;
+    }
+    #caixa img {
+        height: 80%;
+        padding: 0;
+        bottom: 10%;
+        left: 10%;
+    }
+
+    #caixa h2 {
+        width: 100%;
+        margin: 1em 3em;
+        left: 30%;
+        top: 35%;
+    }
+    span {
+        display: block;
+        margin-right: 1em;
+    }
+    .block_display {
+        display: block;
+    }
+    .hide_display {
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+    .navegacao {
+        height: 3em;
+    }
+    .navegacao img {
+        margin-left: 1em;
+    }
+    .banner {
+        height: 60vh;
+    }
+    #caixa {
+        display: block;
+        height: 30%;
+        width: 60%;
+    }
+    #caixa img {
+        height: 50%;
+        padding: 0;
+        bottom: 50%;
+        left: 35%;
+    }
+    #caixa h2 {
+        width: 100%;
+        margin: 1em 1.4em 0 1em;
+        left: 30px;
+        top: 35%;
+    }
+    .bloco {
+        display: block;
+        text-align: center;
+    }
+    .bloco p {
+        text-align: center;
+        margin: auto;
+    }
+    .invertido {
+        display: block;
+    }
+    .invertido h2 {
+        padding: 0;
+        margin: 0;
+    }
+    .invertido p {
+        padding: 0;
+    }
+    .rodape {
+        justify-content: space-between;
+    }
+    .rodape li {
+        display: none;
+    }
+    .quem_somos {
+        margin-left: 1em;
+    }
+    .pacotes_foot {
+        margin-right: 2em;
+    }
+    .SAC {
+        margin-right: 0.5em;
+    }
+    .SAC h2 {
+        text-align: center;
+    }
+    .SAC p {
+        font-size: 0.5em;
+    }
+}
