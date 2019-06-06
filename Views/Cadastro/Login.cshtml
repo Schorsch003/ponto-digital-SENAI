@@ -1,0 +1,19 @@
+@{
+    ViewData["TituloPag"] = "Login";
+}
+
+<section class="formulario">
+
+            <h2>Login</h2>
+            <div class="forms">
+
+                    <form action='@Url.Action("RealizarLogin")' method="POST">
+                    <input type="email" name="email" placeholder="E-mail">
+                    <br />
+                    <input type="password" name="senha" id="password" placeholder="Senha">
+                    <br />
+                    <input type="submit" value="Criar conta">
+                    <br />
+                </form>
+            </div>
+        </section>

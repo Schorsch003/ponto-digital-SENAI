@@ -16,6 +16,10 @@ ul {
     list-style: none;
 }
 
+.voltaraomenu{
+    text-align:center;
+}
+
 .container {
     width: 100%;
 }

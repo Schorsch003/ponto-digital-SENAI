@@ -1,0 +1,65 @@
+@using ponto_digital_final.Models;
+@using ponto_digital_final.Repositories;
+
+@{
+    ViewData["TituloPag"] = "Dashboard";
+    var user = (Usuario) ViewData["Usuario"];
+    UsuarioRepository usuarioRepository = new UsuarioRepository();
+    var listaAdmins = usuarioRepository.ListarAdmins();
+}  
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    @if("Cadastro".Equals(ViewData["TituloPag"]) || "Login".Equals(ViewData["TituloPag"])){
+        <link rel="stylesheet" href="~/css/cadastro_login.css">
+    } else if("SAC".Equals(ViewData["TituloPag"])){
+        <link rel="stylesheet" href="~/css/sac.css">
+    } else if("Pacotes".Equals(ViewData["TituloPag"])){
+        <link rel="stylesheet" href="~/css/pacotes.css">
+    } else if("Avaliacoes".Equals(ViewData["TituloPag"])){
+        <link rel="stylesheet" href="~/css/avaliacoes.css">
+    }    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>@ViewData["TituloPag"] - Ponto Digital</title>
+</head>
+
+<body>
+    <header class="container">
+
+    <nav class="navegacao flex">
+        @{
+            Html.RenderPartial("_HeaderNavBarUnlogged");
+        }
+    </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main> 
+            <footer class="rodape flex">
+            <div class="quem_somos">
+                <h2>Agora Vai!</h2>
+                <a asp-controller="Home" asp-action="QuemSomos">Quem somos?</a>
+            </div>
+
+            <div class="pacotes_foot">
+                <h2>Pacotes</h2>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Pacotes">Tipos de pacotes</a></li>
+                </ul>
+            </div>
+
+            <div class="SAC">
+                <a asp-controller="Home" asp-action="Sac">  <h2>SAC</h2> </a>
+                <p>emailpontodigital@email.com</p>
+                <p>(11) 12345-6789</p>
+                <p>Alameda Barão de Limeira, 539</p>
+            </div>
+    </footer>
+</body>
+
+</html>

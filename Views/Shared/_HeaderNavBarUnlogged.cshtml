@@ -1,0 +1,37 @@
+@using ponto_digital_final.Models;
+@using ponto_digital_final.Repositories;
+
+@{
+    ViewData["TituloPag"] = "Dashboard";
+    var user = (Usuario) ViewData["Usuario"];
+    UsuarioRepository usuarioRepository = new UsuarioRepository();
+    var listaAdmins = usuarioRepository.ListarAdmins();
+    
+}
+
+<a asp-controller="Home" asp-action="Index" id="logo_img">
+    <img src="~/img/logo.png" alt="Logotipo do Ponto Digital">
+</a>
+@if(!listaAdmins.Contains(user)){
+<ul class="flex" id="nav_menu">
+    <li><a asp-controller="Home" asp-action="Pacotes">Pacotes</a></li>
+    <li><a asp-controller="Home" asp-action="ComoUsar">Como usar</a></li>
+    <li><a asp-controller="Home" asp-action="Faq">FAQ</a></li>
+    <li><a asp-controller="Home" asp-action="Avaliacoes">Avaliações</a></li>
+</ul>
+<div id="login" class="flex">
+    @if(ViewData["Usuario"] == null){
+    <a asp-controller="Cadastro" asp-action="Login">Login</a>
+    <a asp-controller="Cadastro" asp-action="Index">Cadastro</a>
+    } else {
+    <a asp-controller="Cadastro" asp-action="Deslogar">Deslogar</a>
+    }
+</div>
+<span id="menu_btn">M</span>
+} else{
+    <ul class="flex" id="nav_menu">
+    <li><a asp-controller="Dashboard" asp-action="ListarUsuarios">Listar Usuarios</a></li>
+    <li><a asp-controller="Dashboard" asp-action="Depoimentos">Mostrar depoimentos</a></li>
+</ul>
+
+}

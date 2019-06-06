@@ -1,0 +1,24 @@
+@using ponto_digital_final.Models;
+@using ponto_digital_final.Repositories;
+
+@{
+    var user = (Usuario) ViewData["Usuario"];
+    UsuarioRepository usuarioRepository = new UsuarioRepository();
+    var listaAdmins = usuarioRepository.ListarAdmins();
+    
+}
+
+<a asp-controller="Home" asp-action="Index" id="logo_img">
+    <img src="~/img/logo.png" alt="Logotipo do Ponto Digital">
+</a>
+<span id="menu_btn">M</span>
+    <ul class="flex" id="nav_menu">
+    <li><a asp-controller="Dashboard" asp-action="ListarUsuarios">Listar Usuarios</a></li>
+    <li><a asp-controller="Dashboard" asp-action="Depoimentos">Mostrar depoimentos</a></li>
+</ul>
+<div id="login" class="flex">
+    
+    <a asp-controller="Cadastro" asp-action="Deslogar">Deslogar</a>
+    
+
+</div>
