@@ -14,5 +14,13 @@ namespace ponto_digital_final.Controllers {
             ViewData["Usuario"] = usuario;
             return View ();
         }
+
+        public IActionResult ListarUsuarios () {
+            return View ();
+        }
+
+        public IActionResult Depoimentos () {
+            return View();
+        }
     }
 }

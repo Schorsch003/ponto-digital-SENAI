@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\49549303837\\Documents\\Senai\\projetos\\Web_CSharp\\ponto-digital-final\\ponto-digital-final.csproj",
+      "projectUniqueName": "C:\\Users\\49549303837\\Documents\\Senai\\projetos\\HTML_CSS\\ponto-digital-SENAI\\ponto-digital-final.csproj",
       "projectName": "ponto-digital-final",
-      "projectPath": "c:\\Users\\49549303837\\Documents\\Senai\\projetos\\Web_CSharp\\ponto-digital-final\\ponto-digital-final.csproj",
+      "projectPath": "C:\\Users\\49549303837\\Documents\\Senai\\projetos\\HTML_CSS\\ponto-digital-SENAI\\ponto-digital-final.csproj",
       "packagesPath": "C:\\Users\\49549303837\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\49549303837\\Documents\\Senai\\projetos\\Web_CSharp\\ponto-digital-final\\obj\\",
+      "outputPath": "C:\\Users\\49549303837\\Documents\\Senai\\projetos\\HTML_CSS\\ponto-digital-SENAI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

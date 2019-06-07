@@ -2,7 +2,6 @@
 @using ponto_digital_final.Repositories;
 
 @{
-    ViewData["TituloPag"] = "Dashboard";
     var user = (Usuario) ViewData["Usuario"];
     UsuarioRepository usuarioRepository = new UsuarioRepository();
     var listaAdmins = usuarioRepository.ListarAdmins();
@@ -33,7 +32,7 @@
 
     <nav class="navegacao flex">
         @{
-            Html.RenderPartial("_HeaderNavBarUnlogged");
+            Html.RenderPartial("_HeaderNavBar");
         }
     </nav>
     </header>

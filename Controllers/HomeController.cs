@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ponto_digital_final.Models;
 using ponto_digital_final.Repositories;
+using ponto_digital_SENAI.Repositories;
 
 namespace ponto_digital_final.Controllers {
     public class HomeController : Controller {
@@ -25,6 +25,8 @@ namespace ponto_digital_final.Controllers {
         }
 
         public IActionResult Pacotes () {
+            PacotesRepository pacotesRepository = new PacotesRepository ();
+            ViewData["pacotes"] = pacotesRepository.Listar ();
             return View ();
         }
 
@@ -42,7 +44,7 @@ namespace ponto_digital_final.Controllers {
 
         public IActionResult Avaliacoes () {
             UsuarioRepository usuarioRepository = new UsuarioRepository ();
-            var usuario = usuarioRepository.ObterPor(HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL));
+            var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL));
             ViewData["Usuario"] = usuario;
             return View ();
         }
