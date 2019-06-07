@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ponto_digital_final.Models;
 using ponto_digital_final.Repositories;
+using ponto_digital_SENAI.Models;
 using ponto_digital_SENAI.Repositories;
 
 namespace ponto_digital_final.Controllers {
@@ -47,6 +48,14 @@ namespace ponto_digital_final.Controllers {
             var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL));
             ViewData["Usuario"] = usuario;
             return View ();
+        }
+
+        [HttpPost]
+        public IActionResult RetornarAvaliacao (IFormCollection form) {
+            var depoimentoRepository = new DepoimentoRepository();
+            var depoimento = new Depoimento();
+            depoimento.Nota = uint.Parse(form["rating"]);
+            return RedirectToAction("Home", "Index");
         }
         public IActionResult Sac () {
             return View ();

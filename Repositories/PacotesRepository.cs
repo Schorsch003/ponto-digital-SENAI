@@ -12,7 +12,7 @@ namespace ponto_digital_SENAI.Repositories {
             if (!File.Exists (PATH)) {
                 File.Create (PATH);
                 string[] linhas = {
-                    "1;Pacote simples;29,99"
+                    "1;Pacote simples;29,99\n"
                 };
                 File.WriteAllLines (PATH, linhas);
             }

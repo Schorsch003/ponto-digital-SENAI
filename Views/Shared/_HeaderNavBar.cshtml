@@ -1,12 +1,17 @@
 @using ponto_digital_final.Models;
 @using ponto_digital_final.Repositories;
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
 @{
     ViewData["TituloPag"] = "Dashboard";
     var user = (Usuario) ViewData["Usuario"];
     UsuarioRepository usuarioRepository = new UsuarioRepository();
     var listaAdmins = usuarioRepository.ListarAdmins();
-    
+    string primeiraPalavra = "";
+    if(user != null){
+    var s = user.Nome;
+    primeiraPalavra = s.Substring(0,s.IndexOf(" "));
+    }
 }
 
 <a asp-controller="Home" asp-action="Index" id="logo_img">
@@ -24,6 +29,9 @@
     <a asp-controller="Cadastro" asp-action="Login">Login</a>
     <a asp-controller="Cadastro" asp-action="Index">Cadastro</a>
     } else {
+        @if(user != null){
+        <a>@primeiraPalavra</a>
+        }
     <a asp-controller="Cadastro" asp-action="Deslogar">Deslogar</a>
     }
 </div>
@@ -35,8 +43,7 @@
 </ul>
 
 }
-<!-- 
-<a asp-controller="Home" asp-action="Index" id="logo_img">
+<!-- <a asp-controller="Home" asp-action="Index" id="logo_img">
     <img src="~/img/logo.png" alt="Logotipo do Ponto Digital">
 </a>
 <span id="menu_btn">M</span>
@@ -49,4 +56,4 @@
     <a asp-controller="Cadastro" asp-action="Deslogar">Deslogar</a>
     
 
-</div> -->
+</div>  -->
