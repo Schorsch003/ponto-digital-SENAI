@@ -5,6 +5,7 @@
 }
 
 
+
 h3{
     font-size:3em;
     margin:1em  ;
@@ -18,7 +19,7 @@ table{
     box-shadow: 1px 1px 1px 1px #000;
 }
 table thead{
-    background-color:rgb(255, 174, 0);
+    background-color:rgb(255, 174, 0.2);
 }
 
 

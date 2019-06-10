@@ -88,5 +88,23 @@ namespace ponto_digital_final.Repositories {
 
             return user;
         }
+
+        public Usuario RemoverUsuario (Usuario user) {
+            var listaAdmin = ListarAdmins ();
+            var listaUsers = Listar ();
+            for (int i = 0; i < listaAdmin.Count; i++) {
+                if (user.ID == listaAdmin[i].ID) {
+                    File.WriteAllText (PATH_ADMIN, "");
+                    return user;
+                }
+            }
+            for (int i = 0; i < listaUsers.Count; i++) {
+                if (user.ID == listaUsers[i].ID) {
+                    File.WriteAllText (PATH, "");
+                    return user;
+                }
+            }
+            return user;
+        }
     }
 }
