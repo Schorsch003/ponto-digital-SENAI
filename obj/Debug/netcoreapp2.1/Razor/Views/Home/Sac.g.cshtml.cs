@@ -71,7 +71,7 @@ using ponto_digital_final.Models;
                 ");
             EndContext();
             BeginContext(309, 660, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc6e6886e91449b891ff473cbce72f6e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f8fbb65511a4cdb8aa26d3d7c030068", async() => {
                 BeginContext(339, 623, true);
                 WriteLiteral(@"
                     <input type=""text"" id=""nome"" placeholder=""Nome"">

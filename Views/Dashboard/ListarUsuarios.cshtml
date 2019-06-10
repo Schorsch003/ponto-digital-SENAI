@@ -18,17 +18,18 @@
     </thead>
     <tbody>
             @foreach(var item in ViewData["admins"] as List<Usuario>){
-        <tr>    
-            <td>@item.ID</td>
-            <td>@item.Nome</td>
-            <td>@item.Email</td>
-            <td>@item.Senha</td>
-            <td>@item.DataNascimento.ToShortDateString()</td>
-            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
-            <td><a asp-controller="Dashboard" asp-action="RemoverAdm" style="background-color:yellow; color:black">X</a> </td>
-
-        </tr>
+                if(!item.Equals(null)){
+                <tr>    
+                    <td>@item.ID</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Email</td>
+                    <td>@item.Senha</td>
+                    <td>@item.DataNascimento.ToShortDateString()</td>
+                    <td><a href="ApagarAdmin/?id=@item.ID" style="background-color:red; color:black">X</a> </td>
+                    <td><a asp-controller="Dashboard" asp-action="RemoverAdm" style="background-color:yellow; color:black">X</a> </td>
+                </tr>
                 }
+            }
     </tbody>
 </table>
 
@@ -52,7 +53,7 @@
             <td>@item.Email</td>
             <td>@item.Senha</td>
             <td>@item.DataNascimento.ToShortDateString()</td>
-            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
+            <td><a href="ApagarUsuario/?id=@item.ID" style="background-color:red; color:black">X</a> </td>            
             <td><a asp-controller="Dashboard" asp-action="TornarAdmin" style="background-color:yellow; color:black">X</a> </td>
         </tr>
                 }

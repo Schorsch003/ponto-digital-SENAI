@@ -25,6 +25,9 @@ namespace ponto_digital_final.Repositories {
         public List<Usuario> Listar () {
             var registros = File.ReadAllLines (PATH);
             foreach (var item in registros) {
+                if (string.IsNullOrEmpty (item)) {
+                    continue;
+                }
                 var user = ConverterEmObjeto (item);
                 usuarios.Add (user);
             }
@@ -52,6 +55,27 @@ namespace ponto_digital_final.Repositories {
                 if (!listaAdmins.Equals (null)) {
                     foreach (var item in listaAdmins) {
                         if (!item.Equals (null) && email.Equals (item.Email)) {
+                            return item;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public Usuario ObterPor (ulong id) {
+            var listaUsuarios = Listar ();
+            var listaAdmins = ListarAdmins ();
+            if (!listaUsuarios.Equals (null)) {
+                foreach (var item in listaUsuarios) {
+                    if (!item.Equals (null) && id.Equals (item.ID)) {
+                        return item;
+                    }
+                }
+                if (!listaAdmins.Equals (null)) {
+                    foreach (var item in listaAdmins) {
+                        if (!item.Equals (null) && id.Equals (item.ID)) {
                             return item;
                         }
                     }
@@ -90,17 +114,27 @@ namespace ponto_digital_final.Repositories {
         }
 
         public Usuario RemoverUsuario (Usuario user) {
-            var listaAdmin = ListarAdmins ();
-            var listaUsers = Listar ();
-            for (int i = 0; i < listaAdmin.Count; i++) {
-                if (user.ID == listaAdmin[i].ID) {
-                    File.WriteAllText (PATH_ADMIN, "");
+            var registros = File.ReadAllLines (PATH);
+            var registrosAdmin = File.ReadAllLines (PATH_ADMIN);
+
+            for (int i = 0; i < registros.Length; i++) {
+                if(string.IsNullOrEmpty(registros[i])){
+                    continue;
+                }
+                var dados = registros[i].Split (";");
+                if (user.ID == ulong.Parse (dados[0])) {
+                    registros[i] = "";
                     return user;
                 }
             }
-            for (int i = 0; i < listaUsers.Count; i++) {
-                if (user.ID == listaUsers[i].ID) {
-                    File.WriteAllText (PATH, "");
+
+            for (int i = 0; i < registrosAdmin.Length; i++) {
+                if(string.IsNullOrEmpty(registrosAdmin[i])){
+                    continue;
+                }
+                var dados = registrosAdmin[i].Split (";");
+                if (user.ID == ulong.Parse (dados[0])) {
+                    registrosAdmin[i] = "";
                     return user;
                 }
             }

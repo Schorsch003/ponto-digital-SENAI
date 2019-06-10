@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ponto_digital_final.Models;
 using ponto_digital_final.Repositories;
+using ponto_digital_SENAI.Repositories;
 
 namespace ponto_digital_final.Controllers {
     public class CadastroController : Controller {
@@ -51,6 +52,7 @@ namespace ponto_digital_final.Controllers {
                 if (listaAdmins.Contains (usuarioRetornado)) {
                     return RedirectToAction ("Index", "Dashboard");
                 }
+                RecuperarUserLogado();
                 return View ("Sucesso");
             } else if(usuarioRetornado != null && senha != usuarioRetornado.Senha){
                 ViewData["Processo"] = "Login";
@@ -63,5 +65,16 @@ namespace ponto_digital_final.Controllers {
             HttpContext.Session.Clear ();
             return RedirectToAction ("Index", "Home");
         }
+
+        void RecuperarUserLogado(){
+            var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
+            var usuario = usuarioRepository.ObterPor (email);
+            // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));
+            ViewData["Usuario"] = usuario;
+            PacotesRepository pacotesRepository = new PacotesRepository ();
+            ViewData["pacotes"] = pacotesRepository.Listar ();
+        }
     }
+
+    
 }

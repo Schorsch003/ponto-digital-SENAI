@@ -24,7 +24,7 @@ namespace ponto_digital_final.Controllers {
                 System.Console.WriteLine ("lista usuarios vindo nula");
             }
             if (usuarioRepository.ListarAdmins () == null) {
-                System.Console.WriteLine ("lista admins   vindo nula");
+                System.Console.WriteLine ("lista admins vindo nula");
 
             }
             return View ();
@@ -32,6 +32,18 @@ namespace ponto_digital_final.Controllers {
 
         public IActionResult Depoimentos () {
             return View ();
+        }
+
+        public IActionResult ApagarUsuario(ulong id){
+            var usuarioRetornado = usuarioRepository.ObterPor(id);
+            usuarioRepository.RemoverUsuario(usuarioRetornado);
+            return View("ListarUsuarios");
+        }
+
+        public IActionResult ApagarAdmin(ulong id){
+            var usuarioRetornado = usuarioRepository.ObterPor(id);
+            usuarioRepository.RemoverUsuario(usuarioRetornado);
+            return View("ListarUsuarios");
         }
     }
 }
