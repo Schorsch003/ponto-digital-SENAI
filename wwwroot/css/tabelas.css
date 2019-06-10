@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+
+h3{
+    font-size:3em;
+    margin:1em  ;
+    text-align:center;
+}
+
+table{
+    margin:auto;
+    background-color: #DDD;
+    box-shadow: 1px 1px 1px 1px #000;
+}
+
+table th{
+    text
+    font-size:1.3em;
+    margin: 1em 3em;
+    box-shadow:0 0 1px 0 #000;
+}
+
+table thead{
+    background-color:rgb(255, 174, 0);
+}
+

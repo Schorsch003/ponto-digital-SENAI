@@ -1,6 +1,5 @@
 @using ponto_digital_final.Models;
 @using ponto_digital_final.Repositories;
-<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
 @{
     ViewData["TituloPag"] = "Dashboard";
@@ -20,7 +19,6 @@
 @if(!listaAdmins.Contains(user)){
 <ul class="flex" id="nav_menu">
     <li><a asp-controller="Home" asp-action="Pacotes">Pacotes</a></li>
-    <li><a asp-controller="Home" asp-action="ComoUsar">Como usar</a></li>
     <li><a asp-controller="Home" asp-action="Faq">FAQ</a></li>
     <li><a asp-controller="Home" asp-action="Avaliacoes">Avaliações</a></li>
 </ul>

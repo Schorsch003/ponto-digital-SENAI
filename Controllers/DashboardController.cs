@@ -16,11 +16,22 @@ namespace ponto_digital_final.Controllers {
         }
 
         public IActionResult ListarUsuarios () {
+            var usuarios = usuarioRepository.Listar ();
+            ViewData["usuarios"] = usuarios;
+            var admins = usuarioRepository.ListarAdmins ();
+            ViewData["admins"] = admins;
+            if (usuarioRepository.Listar () == null) {
+                System.Console.WriteLine ("lista usuarios vindo nula");
+            }
+            if (usuarioRepository.ListarAdmins () == null) {
+                System.Console.WriteLine ("lista admins   vindo nula");
+
+            }
             return View ();
         }
 
         public IActionResult Depoimentos () {
-            return View();
+            return View ();
         }
     }
 }

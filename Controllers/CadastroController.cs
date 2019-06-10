@@ -52,6 +52,9 @@ namespace ponto_digital_final.Controllers {
                     return RedirectToAction ("Index", "Dashboard");
                 }
                 return View ("Sucesso");
+            } else if(usuarioRetornado != null && senha != usuarioRetornado.Senha){
+                ViewData["Processo"] = "Login";
+                return View("Falha");
             }
             return RedirectToAction ("Index", "Home");
         }

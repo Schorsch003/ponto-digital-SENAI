@@ -1,3 +1,56 @@
+@using ponto_digital_SENAI.Models; 
+@using System.Collections.Generic;
+
 @{
-    Layout = "_LayoutAdmin";
+    ViewData["TituloPag"] = "Listar Usuarios";
 }
+
+<h3>Admins</h3>
+<table> 
+    <thead>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Senha</th>
+        <th>Data de nascimento</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+            @foreach(var item in ViewData["admins"] as List<Usuario>){
+        <tr>    
+            <td>@item.ID</td>
+            <td>@item.Nome</td>
+            <td>@item.Email</td>
+            <td>@item.Senha</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
+            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:yellow; color:black">Retirar admin</a> </td>
+
+        </tr>
+                }
+    </tbody>
+</table>
+
+<h3>Usuarios</h3>
+<table> 
+    <thead>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Senha</th>
+        <th>Data de nascimento</th>
+    </thead>
+    <tbody>
+            @foreach(var item in ViewData["usuarios"] as List<Usuario>){
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Nome</td>
+            <td>@item.Email</td>
+            <td>@item.Senha</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
+            <td><a asp-controller="Dashboard" asp-action="TornarAdmin" style="background-color:yellow; color:black">Tornar admin</a> </td>
+        </tr>
+                }
+    </tbody>
+</table>

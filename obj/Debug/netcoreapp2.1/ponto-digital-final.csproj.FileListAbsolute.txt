@@ -37,3 +37,4 @@ C:\Users\49549303837\Documents\Senai\projetos\HTML_CSS\ponto-digital-SENAI\obj\D
 C:\Users\49549303837\Documents\Senai\projetos\HTML_CSS\ponto-digital-SENAI\obj\Debug\netcoreapp2.1\ponto-digital-final.dll
 C:\Users\49549303837\Documents\Senai\projetos\HTML_CSS\ponto-digital-SENAI\obj\Debug\netcoreapp2.1\ponto-digital-final.pdb
 C:\Users\49549303837\Documents\Senai\projetos\HTML_CSS\ponto-digital-SENAI\obj\Debug\netcoreapp2.1\ponto-digital-final.csproj.CopyComplete
+C:\Users\49549303837\Documents\Senai\projetos\HTML_CSS\ponto-digital-SENAI\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Falha.g.cshtml.cs
