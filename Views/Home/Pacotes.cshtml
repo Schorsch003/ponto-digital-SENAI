@@ -15,14 +15,14 @@ ViewData["TituloPag"] = "Pacotes";
 <section class="lista_pacotes">
     <div class="conj_box flex">
         @foreach(var item in ViewData["pacotes"] as List<Pacote>){
+            
+
         <div class="pac_box">
             
             <h3>@item.Titulo</h3>
             
-            <img src="img/pacote1.png" alt="">
                 @if(item.QuantFuncionarios > 500){
                     <ul>
-
                     <h4>Valor a definir</h4>
                     <li>
                         <p>Quantidade de funcionarios a definir</p>

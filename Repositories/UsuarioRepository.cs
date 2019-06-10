@@ -16,7 +16,7 @@ namespace ponto_digital_final.Repositories {
                 File.Create (PATH).Close ();
             }
             user.ID = (ulong) File.ReadAllLines (PATH).Length + 1;
-            string info_usuario = $"{user.ID};{user.Nome};{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()}";
+            string info_usuario = $"{user.ID};{user.Nome} ;{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()}";
             File.AppendAllText (PATH, info_usuario);
 
             return user;

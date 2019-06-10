@@ -13,7 +13,8 @@
         <th>Email</th>
         <th>Senha</th>
         <th>Data de nascimento</th>
-        <th>Ações</th>
+        <th>Remover</th>
+        <th>Retirar admin</th>
     </thead>
     <tbody>
             @foreach(var item in ViewData["admins"] as List<Usuario>){
@@ -24,7 +25,7 @@
             <td>@item.Senha</td>
             <td>@item.DataNascimento.ToShortDateString()</td>
             <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
-            <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:yellow; color:black">Retirar admin</a> </td>
+            <td><a asp-controller="Dashboard" asp-action="RemoverAdm" style="background-color:yellow; color:black">X</a> </td>
 
         </tr>
                 }
@@ -39,6 +40,9 @@
         <th>Email</th>
         <th>Senha</th>
         <th>Data de nascimento</th>
+        <th>Remover</th>
+        <th>Tornar admin</th>
+        
     </thead>
     <tbody>
             @foreach(var item in ViewData["usuarios"] as List<Usuario>){
@@ -49,7 +53,7 @@
             <td>@item.Senha</td>
             <td>@item.DataNascimento.ToShortDateString()</td>
             <td><a asp-controller="Dashboard" asp-action="ApagarUsuario" style="background-color:red; color:black">X</a> </td>
-            <td><a asp-controller="Dashboard" asp-action="TornarAdmin" style="background-color:yellow; color:black">Tornar admin</a> </td>
+            <td><a asp-controller="Dashboard" asp-action="TornarAdmin" style="background-color:yellow; color:black">X</a> </td>
         </tr>
                 }
     </tbody>

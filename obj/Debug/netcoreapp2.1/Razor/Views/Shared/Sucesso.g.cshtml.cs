@@ -72,7 +72,7 @@ using ponto_digital_final.Models;
             WriteLiteral(" realizado com sucesso</h2>\r\n            ");
             EndContext();
             BeginContext(167, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac71f88ed1e045719fc60f02f5fd2189", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7220755fd464351b0ea42038703eb58", async() => {
                 BeginContext(232, 24, true);
                 WriteLiteral("Voltar ao menu principal");
                 EndContext();

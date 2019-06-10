@@ -17,36 +17,32 @@ namespace ponto_digital_final.Controllers {
         private UsuarioRepository usuarioRepository = new UsuarioRepository ();
 
         public IActionResult Index () {
-
-            var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
-            var usuario = usuarioRepository.ObterPor (email);
-            // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));
-            ViewData["Usuario"] = usuario;
+            RecuperarUserLogado();
             return View ();
         }
 
         public IActionResult Pacotes () {
-            PacotesRepository pacotesRepository = new PacotesRepository ();
-            ViewData["pacotes"] = pacotesRepository.Listar ();
+            RecuperarUserLogado();
             return View ();
         }
 
         public IActionResult QuemSomos () {
+            RecuperarUserLogado();
             return View ();
         }
 
         public IActionResult ComoUsar () {
+            RecuperarUserLogado();
             return View ();
         }
 
         public IActionResult Faq () {
+            RecuperarUserLogado();
             return View ();
         }
 
         public IActionResult Avaliacoes () {
-            UsuarioRepository usuarioRepository = new UsuarioRepository ();
-            var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL));
-            ViewData["Usuario"] = usuario;
+            RecuperarUserLogado();
             return View ();
         }
 
@@ -54,11 +50,23 @@ namespace ponto_digital_final.Controllers {
         public IActionResult RetornarAvaliacao (IFormCollection form) {
             var depoimentoRepository = new DepoimentoRepository();
             var depoimento = new Depoimento();
+            
             depoimento.Nota = uint.Parse(form["rating"]);
+            depoimento.Conteudo = form["comentario"];
             return RedirectToAction("Home", "Index");
         }
         public IActionResult Sac () {
             return View ();
+        }
+
+
+        void RecuperarUserLogado(){
+            var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
+            var usuario = usuarioRepository.ObterPor (email);
+            // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));
+            ViewData["Usuario"] = usuario;
+            PacotesRepository pacotesRepository = new PacotesRepository ();
+            ViewData["pacotes"] = pacotesRepository.Listar ();
         }
     }
 }
