@@ -73,11 +73,29 @@ namespace ponto_digital_final.Repositories {
                         return item;
                     }
                 }
-                if (!listaAdmins.Equals (null)) {
-                    foreach (var item in listaAdmins) {
-                        if (!item.Equals (null) && id.Equals (item.ID)) {
-                            return item;
-                        }
+            }
+
+            return null;
+        }
+
+        public Usuario ObterAdmPor (ulong id) {
+            var listaAdmins = ListarAdmins ();
+            if (!listaAdmins.Equals (null)) {
+                foreach (var item in listaAdmins) {
+                    if (!item.Equals (null) && id.Equals (item.ID)) {
+                        return item;
+                    }
+                }
+            }
+
+            return null;
+        }
+         public Usuario ObterAdmPor (string email) {
+            var listaAdmins = ListarAdmins ();
+            if (!listaAdmins.Equals (null)) {
+                foreach (var item in listaAdmins) {
+                    if (!item.Equals (null) && email.Equals (item.ID)) {
+                        return item;
                     }
                 }
             }
@@ -118,7 +136,7 @@ namespace ponto_digital_final.Repositories {
             var registrosAdmin = File.ReadAllLines (PATH_ADMIN);
 
             for (int i = 0; i < registros.Length; i++) {
-                if(string.IsNullOrEmpty(registros[i])){
+                if (string.IsNullOrEmpty (registros[i])) {
                     continue;
                 }
                 var dados = registros[i].Split (";");
@@ -129,7 +147,7 @@ namespace ponto_digital_final.Repositories {
             }
 
             for (int i = 0; i < registrosAdmin.Length; i++) {
-                if(string.IsNullOrEmpty(registrosAdmin[i])){
+                if (string.IsNullOrEmpty (registrosAdmin[i])) {
                     continue;
                 }
                 var dados = registrosAdmin[i].Split (";");

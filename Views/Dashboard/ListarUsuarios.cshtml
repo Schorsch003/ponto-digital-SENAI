@@ -25,7 +25,7 @@
                     <td>@item.Email</td>
                     <td>@item.Senha</td>
                     <td>@item.DataNascimento.ToShortDateString()</td>
-                    <td><a href="ApagarAdmin/?id=@item.ID" style="background-color:red; color:black">X</a> </td>
+                    <td><a href="ApagarAdmin/?email=@item.ID" style="background-color:red; color:black">X</a> </td>
                     <td><a asp-controller="Dashboard" asp-action="RemoverAdm" style="background-color:yellow; color:black">X</a> </td>
                 </tr>
                 }

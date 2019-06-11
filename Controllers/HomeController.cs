@@ -50,12 +50,15 @@ namespace ponto_digital_final.Controllers {
         public IActionResult RetornarAvaliacao (IFormCollection form) {
             var depoimentoRepository = new DepoimentoRepository();
             var depoimento = new Depoimento();
-            
+
+            depoimento.NomeUsuario = form["nome"];
             depoimento.Nota = uint.Parse(form["rating"]);
             depoimento.Conteudo = form["comentario"];
-            return RedirectToAction("Home", "Index");
+            depoimentoRepository.Inserir(depoimento);
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult Sac () {
+            RecuperarUserLogado();
             return View ();
         }
 

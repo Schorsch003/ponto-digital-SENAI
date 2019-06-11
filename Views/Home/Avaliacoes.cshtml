@@ -4,25 +4,24 @@ var user = (Usuario) ViewData["usuario"];
 }
 
 <h2>Deixe sua avaliação do produto</h2>
-<!--ESTILIZAR 5-STAR RATING -->
 
-<form action="Home/RetornarAvaliacao" method="POST">
+<form action="RetornarAvaliacao" method="POST">
     <div class="rating">
-    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-</div>
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+    </div>
 
-<br>
-    @if(user == null){
-    <input type="text" name="nome" id="nome_avaliacao" placeholder="Nome">
-    } else{
-    <input type="text" name="nome" id="nome_avaliacao"value="@user.Nome"> 
-    }
-    <br />
-    <textarea name="comentario" id="textarea1" cols="40" rows="20" placeholder="Deixe seu comentário"></textarea>
-    <br />
-    <input id="enviar" type="submit" value="►" onclick='alert("Depoimento enviado!")'>
+    <br>
+        @if(user == null){
+        <input type="text" name="nome" id="nome_avaliacao" placeholder="Nome">
+        } else{
+        <input type="text" name="nome" id="nome_avaliacao"value="@user.Nome"> 
+        }
+        <br />
+        <textarea name="comentario" id="textarea1" cols="40" rows="20" placeholder="Deixe seu comentário"></textarea>
+        <br />
+        <input id="enviar" type="submit" value="►" onclick='alert("Depoimento enviado!")'>
 </form> 

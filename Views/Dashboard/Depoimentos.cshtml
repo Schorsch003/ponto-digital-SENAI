@@ -1,0 +1,32 @@
+@using ponto_digital_SENAI.Models; 
+@using System.Collections.Generic;
+
+
+@{
+    ViewData["TituloPag"] = "Depoimentos";
+}
+
+<table> 
+    <thead>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Comentário</th>
+        <th>Avaliação</th>
+        <th>Aprovar</th>
+        <th>Reprovar</th>
+    </thead>
+    <tbody>
+            @foreach(var item in ViewData["depoimentos"] as List<Depoimento>){
+                if(!item.Equals(null)){
+                <tr>    
+                    <td>@item.ID</td>
+                    <td>@item.NomeUsuario</td>
+                    <td>@item.Conteudo</td>
+                    <td>@item.Nota</td>
+                    <td><a href="ApagarAdmin/?email=@item.ID" style="background-color:blue; color:black">X</a> </td>
+                    <td><a asp-controller="Dashboard" asp-action="RemoverAdm" style="background-color:red; color:black">X</a> </td>
+                </tr>
+                }
+            }
+    </tbody>
+</table>
