@@ -9,7 +9,7 @@ namespace ponto_digital_final.Controllers {
         private const string SESSION_EMAIL = "_EMAIL-USUARIO";
         private const string SESSION_SENHA = "_SENHA-USUARIO";
         private UsuarioRepository usuarioRepository = new UsuarioRepository ();
-        private DepoimentoRepository depoimentoRepository = new DepoimentoRepository();
+        private DepoimentoRepository depoimentoRepository = new DepoimentoRepository ();
 
         public IActionResult Index () {
             var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL));
@@ -17,15 +17,18 @@ namespace ponto_digital_final.Controllers {
                 usuario = usuarioRepository.ObterAdmPor (HttpContext.Session.GetString (SESSION_EMAIL));
             }
             ViewData["Usuario"] = usuario;
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult ListarUsuarios () {
             var usuarios = usuarioRepository.Listar ();
             ViewData["usuarios"] = usuarios;
+            System.Console.WriteLine ("USERS: " + usuarios.Count);
             var admins = usuarioRepository.ListarAdmins ();
             ViewData["admins"] = admins;
+            System.Console.WriteLine ("ADMS: " + admins.Count);
+
             if (usuarioRepository.Listar () == null) {
                 System.Console.WriteLine ("lista usuarios vindo nula");
             }
@@ -33,30 +36,36 @@ namespace ponto_digital_final.Controllers {
                 System.Console.WriteLine ("lista admins vindo nula");
 
             }
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult Depoimentos () {
-            var listaDepoimentos = depoimentoRepository.Listar();
+            var listaDepoimentos = depoimentoRepository.Listar ();
             ViewData["depoimentos"] = listaDepoimentos;
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
-        public IActionResult ApagarUsuario (ulong id) {
-            var usuarioRetornado = usuarioRepository.ObterPor (id);
+        public IActionResult ApagarUsuario (string id) {
+            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse(id));
             usuarioRepository.RemoverUsuario (usuarioRetornado);
-            return View ("ListarUsuarios");
+            var usuarios = usuarioRepository.Listar ();
+            ViewData["usuarios"] = usuarios;
+            System.Console.WriteLine ("USERS: " + usuarios.Count);
+            var admins = usuarioRepository.ListarAdmins ();
+            ViewData["admins"] = admins;
+            System.Console.WriteLine ("ADMS: " + admins.Count);
+            return RedirectToAction ("ListarUsuarios", "Dashboard");
+            }
+        [HttpGet]
+        public IActionResult ApagarAdmin (string email) {
+            var usuarioRetornado = usuarioRepository.ObterAdmPor (ulong.Parse (email));
+            usuarioRepository.RemoverUsuario (usuarioRetornado);
+            return RedirectToAction ("ListarUsuarios", "Dashboard");
         }
 
-        public IActionResult ApagarAdmin (ulong id) {
-            var usuarioRetornado = usuarioRepository.ObterAdmPor (id);
-            usuarioRepository.RemoverUsuario (usuarioRetornado);
-            return View ("ListarUsuarios");
-        }
-
-        void RecuperarUserLogado(){
+        void RecuperarUserLogado () {
             var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
             var usuario = usuarioRepository.ObterPor (email);
             // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));

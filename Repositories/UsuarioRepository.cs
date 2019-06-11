@@ -8,7 +8,7 @@ namespace ponto_digital_final.Repositories {
         private const string PATH = "Database/Usuarios.csv";
         private const string PATH_ADMIN = "Database/Admins.csv";
 
-        private List<Usuario> usuarios = new List<Usuario> ();
+        private List<Usuario> usuarios;
         private List<Usuario> admins = new List<Usuario> ();
 
         public Usuario InserirUsuario (Usuario user) {
@@ -23,6 +23,7 @@ namespace ponto_digital_final.Repositories {
         }
 
         public List<Usuario> Listar () {
+            usuarios = new List<Usuario> ();
             var registros = File.ReadAllLines (PATH);
             foreach (var item in registros) {
                 if (string.IsNullOrEmpty (item)) {
@@ -133,26 +134,22 @@ namespace ponto_digital_final.Repositories {
 
         public Usuario RemoverUsuario (Usuario user) {
             var registros = File.ReadAllLines (PATH);
-            var registrosAdmin = File.ReadAllLines (PATH_ADMIN);
+            string[] registrosAdmin = File.ReadAllLines (PATH_ADMIN);
+           Console.WriteLine("AAAA");
+           Console.WriteLine(registrosAdmin[0]);
 
-            for (int i = 0; i < registros.Length; i++) {
-                if (string.IsNullOrEmpty (registros[i])) {
-                    continue;
-                }
-                var dados = registros[i].Split (";");
-                if (user.ID == ulong.Parse (dados[0])) {
-                    registros[i] = "";
-                    return user;
-                }
-            }
+       
 
             for (int i = 0; i < registrosAdmin.Length; i++) {
                 if (string.IsNullOrEmpty (registrosAdmin[i])) {
+                    Console.WriteLine("BBBB");
                     continue;
                 }
-                var dados = registrosAdmin[i].Split (";");
-                if (user.ID == ulong.Parse (dados[0])) {
+                var dados = registrosAdmin[i].Split(";");
+                if (user.ID.Equals(ulong.Parse (dados[0]))) {
                     registrosAdmin[i] = "";
+                    Console.WriteLine("CCCC");
+                    File.WriteAllLines(PATH_ADMIN, registrosAdmin);
                     return user;
                 }
             }
