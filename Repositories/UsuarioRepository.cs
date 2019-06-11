@@ -8,7 +8,7 @@ namespace ponto_digital_final.Repositories {
         private const string PATH = "Database/Usuarios.csv";
         private const string PATH_ADMIN = "Database/Admins.csv";
 
-        private List<Usuario> usuarios;
+        private List<Usuario> usuarios = new List<Usuario> ();
         private List<Usuario> admins = new List<Usuario> ();
 
         public Usuario InserirUsuario (Usuario user) {
@@ -23,7 +23,6 @@ namespace ponto_digital_final.Repositories {
         }
 
         public List<Usuario> Listar () {
-            usuarios = new List<Usuario> ();
             var registros = File.ReadAllLines (PATH);
             foreach (var item in registros) {
                 if (string.IsNullOrEmpty (item)) {
@@ -91,7 +90,7 @@ namespace ponto_digital_final.Repositories {
 
             return null;
         }
-         public Usuario ObterAdmPor (string email) {
+        public Usuario ObterAdmPor (string email) {
             var listaAdmins = ListarAdmins ();
             if (!listaAdmins.Equals (null)) {
                 foreach (var item in listaAdmins) {
@@ -135,25 +134,51 @@ namespace ponto_digital_final.Repositories {
         public Usuario RemoverUsuario (Usuario user) {
             var registros = File.ReadAllLines (PATH);
             string[] registrosAdmin = File.ReadAllLines (PATH_ADMIN);
-           Console.WriteLine("AAAA");
-           Console.WriteLine(registrosAdmin[0]);
-
-       
+            Console.WriteLine ("AAAA");
+            Console.WriteLine (registrosAdmin[0]);
 
             for (int i = 0; i < registrosAdmin.Length; i++) {
                 if (string.IsNullOrEmpty (registrosAdmin[i])) {
-                    Console.WriteLine("BBBB");
+                    Console.WriteLine ("BBBB");
                     continue;
                 }
-                var dados = registrosAdmin[i].Split(";");
-                if (user.ID.Equals(ulong.Parse (dados[0]))) {
-                    registrosAdmin[i] = "";
-                    Console.WriteLine("CCCC");
-                    File.WriteAllLines(PATH_ADMIN, registrosAdmin);
+                var dados = registrosAdmin[i].Split (";");
+                if (user.ID.Equals (ulong.Parse (dados[0]))) {
+                    registrosAdmin[i] = null;
+                    Console.WriteLine ("CCCC");
+                    File.WriteAllLines (PATH_ADMIN, registrosAdmin);
+                    return user;
+                }
+            }
+
+            for (int i = 0; i < registros.Length; i++) {
+                if (string.IsNullOrEmpty (registros[i])) {
+                    Console.WriteLine ("BBBB");
+                    continue;
+                }
+                var dados = registros[i].Split (";");
+                if (user.ID.Equals (ulong.Parse (dados[0]))) {
+                    registros[i] = null;
+                    Console.WriteLine ("CCCC");
+                    File.WriteAllLines (PATH, registros);
                     return user;
                 }
             }
             return user;
+        }
+
+        public Usuario RetirarAdm (Usuario user) {
+            if (ListarAdmins ().Contains (user)) {
+                MoverUsuario (user, ListarAdmins (), Listar ());
+                return user;
+            }
+            return null;
+        }
+        public void MoverUsuario (Usuario user, List<Usuario> lista1, List<Usuario> lista2) {
+            if (lista1.Contains (user)) {
+                lista2.Add (user);
+                lista1.Remove (user);
+            }
         }
     }
 }

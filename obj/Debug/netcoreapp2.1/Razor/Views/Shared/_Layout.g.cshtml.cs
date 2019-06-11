@@ -84,12 +84,12 @@ using ponto_digital_final.Repositories;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"pt-br\">\r\n\r\n");
             EndContext();
             BeginContext(303, 1213, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2475294174744f308baea59655ae89cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b9c72adc6604694a391bcd5bb3367a6", async() => {
                 BeginContext(309, 110, true);
                 WriteLiteral("\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    ");
                 EndContext();
                 BeginContext(419, 46, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e35dac3b626c487c92c8a452054f17f5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "644f26e1526247c2b6563f76d20165eb", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -116,7 +116,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(671, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4237977ae50245489233104352c5606e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "506341878f3d45e8ad2ca2f875ca8db1", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -143,7 +143,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(789, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "44e36de47ef4474ebb12bab01db8156b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9f74ae5ab89c4efdaa6ad7d7212fa28a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -170,7 +170,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(900, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "636373ecc2024bb78546c0051752d250", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "570e65aaa7e14b3dabb060f6ffd63621", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -197,7 +197,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(1018, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "976b16213c8c4578b72bdd9b8da23bdc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9d37f28e0c0d4d8fb5e044e373966044", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -224,7 +224,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(1133, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fc68b02b42c04eb18c7aa472c5e44e1f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "13de04723af2456a80d526c8fb132bf2", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -251,7 +251,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("        ");
                 EndContext();
                 BeginContext(1299, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c4fdd4124d8f45f4b9769140f46fdd3e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b613e981c23142f781d06b06873fc795", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -303,7 +303,7 @@ using ponto_digital_final.Repositories;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(1520, 981, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdb032ccb9014f0485726d5f6cb91c6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68774c12670a487abcb6e221f8982f13", async() => {
                 BeginContext(1526, 70, true);
                 WriteLiteral("\r\n    <header class=\"container\">\r\n\r\n    <nav class=\"navegacao flex\">\r\n");
                 EndContext();
@@ -328,7 +328,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("\r\n    </main> \r\n            <footer class=\"rodape flex\">\r\n            <div class=\"quem_somos\">\r\n                <h2>Agora Vai!</h2>\r\n                ");
                 EndContext();
                 BeginContext(1878, 63, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "394374f3dbff40f692417dd64c15aea0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2452b138dde54e10a62138dc2a3931f5", async() => {
                     BeginContext(1926, 11, true);
                     WriteLiteral("Quem somos?");
                     EndContext();
@@ -352,7 +352,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("\r\n            </div>\r\n\r\n            <div class=\"pacotes_foot\">\r\n                <h2>Pacotes</h2>\r\n                <ul>\r\n                    <li>");
                 EndContext();
                 BeginContext(2085, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c832e5ad81764d81a9fe425faf5ad863", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6150820c8cb443dd8a50afe1f7b745c2", async() => {
                     BeginContext(2131, 16, true);
                     WriteLiteral("Tipos de pacotes");
                     EndContext();
@@ -376,7 +376,7 @@ using ponto_digital_final.Repositories;
                 WriteLiteral("</li>\r\n                </ul>\r\n            </div>\r\n\r\n            <div class=\"SAC\">\r\n                ");
                 EndContext();
                 BeginContext(2250, 61, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "293b70550be44bd5ba345d72cf48f3d1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1661394f7481436eb039a69c535a47c1", async() => {
                     BeginContext(2292, 15, true);
                     WriteLiteral("  <h2>SAC</h2> ");
                     EndContext();

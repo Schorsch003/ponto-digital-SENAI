@@ -18,7 +18,7 @@ var user = (Usuario) ViewData["usuario"];
         @if(user == null){
         <input type="text" name="nome" id="nome_avaliacao" placeholder="Nome">
         } else{
-        <input type="text" name="nome" id="nome_avaliacao"value="@user.Nome"> 
+        <input type="text" name="nome" id="nome_avaliacao" value="@user.Nome" > 
         }
         <br />
         <textarea name="comentario" id="textarea1" cols="40" rows="20" placeholder="Deixe seu comentário"></textarea>

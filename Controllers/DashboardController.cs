@@ -47,20 +47,15 @@ namespace ponto_digital_final.Controllers {
             return View ();
         }
 
-        public IActionResult ApagarUsuario (string id) {
-            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse(id));
-            usuarioRepository.RemoverUsuario (usuarioRetornado);
-            var usuarios = usuarioRepository.Listar ();
-            ViewData["usuarios"] = usuarios;
-            System.Console.WriteLine ("USERS: " + usuarios.Count);
-            var admins = usuarioRepository.ListarAdmins ();
-            ViewData["admins"] = admins;
-            System.Console.WriteLine ("ADMS: " + admins.Count);
-            return RedirectToAction ("ListarUsuarios", "Dashboard");
-            }
-        [HttpGet]
+
         public IActionResult ApagarAdmin (string email) {
             var usuarioRetornado = usuarioRepository.ObterAdmPor (ulong.Parse (email));
+            usuarioRepository.RemoverUsuario (usuarioRetornado);
+            return RedirectToAction ("ListarUsuarios", "Dashboard");
+        }
+
+        public IActionResult ApagarUsuario (string email) {
+            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (email));
             usuarioRepository.RemoverUsuario (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
         }
