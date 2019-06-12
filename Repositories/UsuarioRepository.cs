@@ -148,29 +148,15 @@ namespace ponto_digital_final.Repositories {
             Console.WriteLine ("AAAA");
 
             for (int i = 0; i < registros.Length; i++) {
-                if (string.IsNullOrEmpty (registrosAdmin[i]) && ) {
-                    Console.WriteLine ("BBBB");
-                    continue;
-                }
-                var dados = registrosAdmin[i].Split (";");
-                if (user.ID.Equals (ulong.Parse (dados[0]))) {
-                    registrosAdmin[i] = null;
-                    Console.WriteLine ("CCCC");
-                    File.WriteAllLines (PATH_ADMIN, registrosAdmin);
-                    return user;
-                }
-            }
-
-            for (int i = 0; i < registros.Length; i++) {
                 if (string.IsNullOrEmpty (registros[i])) {
                     Console.WriteLine ("BBBB");
                     continue;
                 }
                 var dados = registros[i].Split (";");
                 if (user.ID.Equals (ulong.Parse (dados[0]))) {
-                    registros[i] = "";
+                    registros[i] = null;
                     Console.WriteLine ("CCCC");
-                    File.WriteAllLines (PATH, registros);
+                    File.WriteAllLines (PATH_ADMIN, registros);
                     return user;
                 }
             }
