@@ -1,10 +1,15 @@
+body{
+    height: 100vh;
+}
+
+
 .pacotes{
     background-color: #b3c2cc;
 }
 
 main{
     background-color: #0094CC;
-    height: 580px;
+    height: 65vh;
 }
 
 .introd{
@@ -24,8 +29,9 @@ main{
 }
 
 .conj_box{
+    height: 30vh;
     justify-content: space-around;
-    margin: 1em 0 0 0;
+    margin: 1em 0 2em 0;
 }
 
 .pac_box img{
@@ -50,8 +56,9 @@ main{
 }
 
 .pac_box{
-    padding:2em;
-    margin-bottom: 2em;
+    height:35vh;
+    padding:1.5em;
+    margin-bottom: 10px;
     background-color: #00347f;
     border-radius: 20px;
 }
@@ -66,21 +73,17 @@ main{
 }
 
 .comprar{
+    margin:1% 0 0 0;
     background-color:#01142e;
-    margin: auto;    
-    padding: 1em 2em;
+    padding: 1em 1.5em;
     color:#fff;  
     border-radius: 10px;
     font-weight: bold;
-    font-size: 1.5em; 
+    font-size: 1.5em;
 }
 
 .comprar:hover{
     background-color:#000000;
-    margin: auto;    
-    padding: 1em 2em;
-    color:#fff;  
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 1.5em; 
+    margin: auto;
+    
 }

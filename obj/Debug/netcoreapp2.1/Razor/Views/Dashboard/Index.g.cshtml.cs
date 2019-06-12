@@ -74,7 +74,7 @@ using ponto_digital_final.Models;
             WriteLiteral("</h2>\r\n\r\n<ul>\r\n    <li>");
             EndContext();
             BeginContext(159, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bde86eb167f4756a409c9035a6ac165", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5b39f299099404abb7843507e47e16a", async() => {
                 BeginContext(217, 15, true);
                 WriteLiteral("Listar Usuários");
                 EndContext();
@@ -98,7 +98,7 @@ using ponto_digital_final.Models;
             WriteLiteral("</li>\r\n    <li>");
             EndContext();
             BeginContext(251, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04195db3208d448db2a28c669c59a0cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77c5c6a9af7a49ceb34b9d8e09cd7996", async() => {
                 BeginContext(306, 18, true);
                 WriteLiteral("Listar Depoimentos");
                 EndContext();

@@ -8,10 +8,11 @@ namespace ponto_digital_final.Repositories {
         private const string PATH = "Database/Usuarios.csv";
         private const string PATH_ADMIN = "Database/Admins.csv";
 
-        private List<Usuario> usuarios = new List<Usuario> ();
+        private List<Usuario> usuarios;
         private List<Usuario> admins = new List<Usuario> ();
 
         public Usuario InserirUsuario (Usuario user) {
+
             if (!File.Exists (PATH)) {
                 File.Create (PATH).Close ();
             }
@@ -23,6 +24,7 @@ namespace ponto_digital_final.Repositories {
         }
 
         public List<Usuario> Listar () {
+            usuarios = new List<Usuario> ();
             var registros = File.ReadAllLines (PATH);
             foreach (var item in registros) {
                 if (string.IsNullOrEmpty (item)) {
@@ -131,6 +133,25 @@ namespace ponto_digital_final.Repositories {
             return user;
         }
 
+        public Usuario RemoverAdmin (Usuario user) {
+            var linhasAdmins = File.ReadAllLines (PATH_ADMIN);
+            string adminRetornado = "";
+            for (int i = 0; i < linhasAdmins.Length; i++) {
+                var dadosAdmin = linhasAdmins[i].Split (";");
+                if (user.ID == ulong.Parse (dadosAdmin[0])) {
+                    adminRetornado = linhasAdmins[i];
+                    linhasAdmins[i] = "";
+                    File.WriteAllLines (PATH_ADMIN, linhasAdmins);
+                }
+            }
+            var linhasUser = File.ReadAllLines (PATH);
+            for (int i = 0; i < linhasUser.Length; i++) {
+                File.WriteAllLines (PATH, linhasUser);
+                File.AppendAllText (PATH, adminRetornado);
+            }
+
+            return user;
+        }
         public Usuario RemoverUsuario (Usuario user) {
             var registros = File.ReadAllLines (PATH);
             string[] registrosAdmin = File.ReadAllLines (PATH_ADMIN);
@@ -158,7 +179,7 @@ namespace ponto_digital_final.Repositories {
                 }
                 var dados = registros[i].Split (";");
                 if (user.ID.Equals (ulong.Parse (dados[0]))) {
-                    registros[i] = null;
+                    registros[i] = "";
                     Console.WriteLine ("CCCC");
                     File.WriteAllLines (PATH, registros);
                     return user;
@@ -167,18 +188,5 @@ namespace ponto_digital_final.Repositories {
             return user;
         }
 
-        public Usuario RetirarAdm (Usuario user) {
-            if (ListarAdmins ().Contains (user)) {
-                MoverUsuario (user, ListarAdmins (), Listar ());
-                return user;
-            }
-            return null;
-        }
-        public void MoverUsuario (Usuario user, List<Usuario> lista1, List<Usuario> lista2) {
-            if (lista1.Contains (user)) {
-                lista2.Add (user);
-                lista1.Remove (user);
-            }
-        }
     }
 }
