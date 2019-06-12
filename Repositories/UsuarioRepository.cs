@@ -17,7 +17,7 @@ namespace ponto_digital_final.Repositories {
                 File.Create (PATH).Close ();
             }
             user.ID = (ulong) File.ReadAllLines (PATH).Length + 1;
-            string info_usuario = $"{user.ID};{user.Nome} ;{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()}";
+            string info_usuario = $"{user.ID};{user.Nome} ;{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()};{user.EhAdmin}";
             File.AppendAllText (PATH, info_usuario);
 
             return user;
@@ -37,10 +37,12 @@ namespace ponto_digital_final.Repositories {
         }
 
         public List<Usuario> ListarAdmins () {
-            var registros = File.ReadAllLines (PATH_ADMIN);
-            foreach (var item in registros) {
-                var user = ConverterEmObjeto (item, true);
-                admins.Add (user);
+            var lista = Listar ();
+            foreach (var item in lista) {
+                if (item.EhAdmin) {
+                    admins.Add (item);
+                }
+
             }
             return admins;
         }
@@ -54,11 +56,9 @@ namespace ponto_digital_final.Repositories {
                         return item;
                     }
                 }
-                if (!listaAdmins.Equals (null)) {
-                    foreach (var item in listaAdmins) {
-                        if (!item.Equals (null) && email.Equals (item.Email)) {
-                            return item;
-                        }
+                foreach (var item in listaAdmins) {
+                    if (!item.Equals (null) && email.Equals (item.Email)) {
+                        return item;
                     }
                 }
             }
@@ -116,6 +116,7 @@ namespace ponto_digital_final.Repositories {
             user.Email = dados[2];
             user.Senha = dados[3];
             user.DataNascimento = DateTime.Parse (dados[4]);
+            user.EhAdmin = bool.Parse (dados[5]);
             return user;
         }
         public Usuario ConverterEmObjeto (string registro, bool admin) {
@@ -129,37 +130,25 @@ namespace ponto_digital_final.Repositories {
             user.Email = dados[2];
             user.Senha = dados[3];
             user.DataNascimento = DateTime.Parse (dados[4]);
+            user.EhAdmin = bool.Parse (dados[5]);
 
             return user;
         }
 
-        public Usuario RemoverAdmin (Usuario user) {
-            var linhasAdmins = File.ReadAllLines (PATH_ADMIN);
-            string adminRetornado = "";
-            for (int i = 0; i < linhasAdmins.Length; i++) {
-                var dadosAdmin = linhasAdmins[i].Split (";");
-                if (user.ID == ulong.Parse (dadosAdmin[0])) {
-                    adminRetornado = linhasAdmins[i];
-                    linhasAdmins[i] = "";
-                    File.WriteAllLines (PATH_ADMIN, linhasAdmins);
-                }
+        public Usuario AlterarPermissao (Usuario user) {
+            if (user.EhAdmin) {
+                user.EhAdmin = false;
+            } else {
+                user.EhAdmin = true;
             }
-            var linhasUser = File.ReadAllLines (PATH);
-            for (int i = 0; i < linhasUser.Length; i++) {
-                File.WriteAllLines (PATH, linhasUser);
-                File.AppendAllText (PATH, adminRetornado);
-            }
-
             return user;
         }
         public Usuario RemoverUsuario (Usuario user) {
             var registros = File.ReadAllLines (PATH);
-            string[] registrosAdmin = File.ReadAllLines (PATH_ADMIN);
             Console.WriteLine ("AAAA");
-            Console.WriteLine (registrosAdmin[0]);
 
-            for (int i = 0; i < registrosAdmin.Length; i++) {
-                if (string.IsNullOrEmpty (registrosAdmin[i])) {
+            for (int i = 0; i < registros.Length; i++) {
+                if (string.IsNullOrEmpty (registrosAdmin[i]) && ) {
                     Console.WriteLine ("BBBB");
                     continue;
                 }

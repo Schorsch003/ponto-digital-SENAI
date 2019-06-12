@@ -17,8 +17,8 @@
         <th>Retirar admin</th>
     </thead>
     <tbody>
-            @foreach(var item in ViewData["admins"] as List<Usuario>){
-                if(!item.Equals(null)){
+            @foreach(var item in ViewData["usuarios"] as List<Usuario>){
+                if(!item.Equals(null) && item.EhAdmin){
                 <tr>    
                     <td>@item.ID</td>
                     <td>@item.Nome</td>
@@ -48,6 +48,8 @@
     <tbody>
             @foreach(var item in ViewData["usuarios"] as List<Usuario>){
         <tr>
+            @if(!item.Equals(null) && !item.EhAdmin){
+
             <td>@item.ID</td>
             <td>@item.Nome</td>
             <td>@item.Email</td>
@@ -55,7 +57,8 @@
             <td>@item.DataNascimento.ToShortDateString()</td>
             <td><a href='@Url.Action("ApagarUsuario","Dashboard")?email=@item.ID' style="background-color:red; color:black">X</a> </td>         
             <td><a asp-controller="Dashboard" asp-action="TornarAdmin" style="background-color:yellow; color:black">X</a> </td>
-        </tr>
-                }
+            }
+        </tr> 
+        }
     </tbody>
 </table>

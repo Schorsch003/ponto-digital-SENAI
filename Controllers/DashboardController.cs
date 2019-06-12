@@ -54,10 +54,9 @@ namespace ponto_digital_final.Controllers {
         }
         public IActionResult RetirarAdmin (string email) {
             var usuarioRetornado = usuarioRepository.ObterAdmPor (ulong.Parse (email));
-            usuarioRepository.RemoverAdmin (usuarioRetornado);
+            usuarioRepository.AlterarPermissao (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
         }
-
 
         public IActionResult ApagarUsuario (string email) {
             var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (email));

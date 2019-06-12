@@ -21,6 +21,7 @@ namespace ponto_digital_final.Controllers {
             usuario.Email = form["email"];
             usuario.Senha = form["senha"];
             usuario.DataNascimento = DateTime.Parse (form["dataNascimento"]);
+            usuario.EhAdmin = false;
 
             System.Console.WriteLine (form["nome"]);
 
@@ -49,14 +50,14 @@ namespace ponto_digital_final.Controllers {
                 HttpContext.Session.SetString (SESSION_SENHA, usuarioRetornado.Senha);
                 System.Console.WriteLine ($"usuario {usuarioRetornado.Nome} logado");
                 ViewData["Processo"] = "Login";
-                if (listaAdmins.Contains (usuarioRetornado)) {
+                if (usuarioRetornado.EhAdmin) {
                     return RedirectToAction ("Index", "Dashboard");
                 }
-                RecuperarUserLogado();
+                RecuperarUserLogado ();
                 return View ("Sucesso");
-            } else if(usuarioRetornado != null && senha != usuarioRetornado.Senha){
+            } else if (usuarioRetornado != null && senha != usuarioRetornado.Senha) {
                 ViewData["Processo"] = "Login";
-                return View("Falha");
+                return View ("Falha");
             }
             return RedirectToAction ("Index", "Home");
         }
@@ -66,7 +67,7 @@ namespace ponto_digital_final.Controllers {
             return RedirectToAction ("Index", "Home");
         }
 
-        void RecuperarUserLogado(){
+        void RecuperarUserLogado () {
             var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
             var usuario = usuarioRepository.ObterPor (email);
             // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));
@@ -76,5 +77,4 @@ namespace ponto_digital_final.Controllers {
         }
     }
 
-    
 }

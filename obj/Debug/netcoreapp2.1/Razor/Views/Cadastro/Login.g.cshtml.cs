@@ -61,7 +61,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n<section class=\"formulario\">\r\n\r\n            <h2>Login</h2>\r\n            <div class=\"forms\">\r\n\r\n                    ");
             EndContext();
             BeginContext(162, 398, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6885b99e434d4ff39c3047424c40316b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3adfa272ab684bafa5524b2a8c0c83a4", async() => {
                 BeginContext(220, 333, true);
                 WriteLiteral(@"
                     <input type=""email"" name=""email"" placeholder=""E-mail"">

@@ -75,12 +75,12 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(45, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f95f988e3e394b85adb4dc6d541a8071", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "830eb07adeee4018bf60290d4a32fb9a", async() => {
                 BeginContext(51, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(57, 46, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "de8d6a65cc4f435ba607f093fe14cade", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "77da2a6e84e247e4b515d8fe44c34298", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -99,7 +99,7 @@ using ponto_digital_final.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(109, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "94ffcc3e632b45f8a0a330fa452044c8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8c6a4373494f4ce591cf7a7a2443b7e2", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -133,7 +133,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n\r\n<h2>Perguntas frequentes</h2>\r\n        <div class=\"pesquisar flex content\">\r\n            ");
             EndContext();
             BeginContext(257, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffa5b65d1f01488f9ae8769b35040e0e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61579ff3291b4e039633ea6140a88c8f", async() => {
                 BeginContext(287, 105, true);
                 WriteLiteral("\r\n                <input type=\"text\" name=\"pesquisa\" id=\"pesquisa\" placeholder=\"Pesquisar\">\r\n            ");
                 EndContext();
@@ -158,7 +158,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n\r\n            <select name=\"filtros\" id=\"filtros\">\r\n                ");
             EndContext();
             BeginContext(469, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fe08499f0f44817a08492de55f2f240", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "240ea62fe904414fa2cac9c82351bc4a", async() => {
                 BeginContext(514, 7, true);
                 WriteLiteral("Filtros");
                 EndContext();
@@ -186,7 +186,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(548, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "254b9f01089c4f4aa7bc9307bfb002d3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe74b338d5d14629aec9688123f9bf69", async() => {
                 BeginContext(569, 7, true);
                 WriteLiteral("Opção 1");
                 EndContext();
@@ -208,7 +208,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(603, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3e98aa4d316451bb06e43a0fe0184a3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1afc8b22733644868699ab77afb9b923", async() => {
                 BeginContext(624, 7, true);
                 WriteLiteral("Opção 2");
                 EndContext();
@@ -230,7 +230,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(658, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19a0f351ade6443e869c26b0322dd9ea", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b24984b8faa3412fbaff28163245919b", async() => {
                 BeginContext(679, 7, true);
                 WriteLiteral("Opção 3");
                 EndContext();
@@ -252,7 +252,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(713, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5309be2647c74a09853a865eecd677e1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35039d9d74c44208a6bafa0e26cc9dc9", async() => {
                 BeginContext(734, 7, true);
                 WriteLiteral("Opção 4");
                 EndContext();
@@ -274,7 +274,7 @@ using ponto_digital_final.Models;
             WriteLiteral("\r\n            </select>\r\n        </div>\r\n\r\n        <section class=\"perguntas scrollable\">\r\n            <div class=\"pergunta1 pergunta\">\r\n                ");
             EndContext();
             BeginContext(903, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "af38b6127b00423c862cca1fc73b0180", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f624d5cee6c847d0ad4c72656aa72984", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

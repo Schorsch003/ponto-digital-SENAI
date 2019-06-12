@@ -63,7 +63,7 @@ var user = (Usuario) ViewData["usuario"];
             WriteLiteral("\r\n<h2>Deixe sua avaliação do produto</h2>\r\n\r\n");
             EndContext();
             BeginContext(134, 1037, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08f3e95b52ce4d1784b4bf341135644a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cfa0c73c56144d38be2b7ee30fa5bcc6", async() => {
                 BeginContext(181, 522, true);
                 WriteLiteral(@"
     <div class=""rating"">
