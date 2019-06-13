@@ -25,7 +25,7 @@
                     <td>@item.Email</td>
                     <td>@item.Senha</td>
                     <td>@item.DataNascimento.ToShortDateString()</td>
-                    <td><a href='@Url.Action("ApagarAdmin","Dashboard")?id=@item.ID' style="background-color:red; color:black">X</a> </td>
+                    <td><a href='@Url.Action("ApagarUsuario","Dashboard")?id=@item.ID' style="background-color:red; color:black">X</a> </td>
                     <td><a href='@Url.Action("AlterarPermissao", "Dashboard")?id=@item.ID' style="background-color:yellow; color:black">Xxx</a> </td>
                 </tr>
                 }

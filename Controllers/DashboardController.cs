@@ -16,6 +16,8 @@ namespace ponto_digital_final.Controllers {
         public IActionResult Index () {
             var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL));
             ViewData["Usuario"] = usuario;
+            ViewData["usuarios"] = usuarioRepository.Listar ();
+            ViewData["depoimentos"] = depoimentoRepository.Listar ();
             RecuperarUserLogado ();
             return View ();
         }
@@ -49,22 +51,27 @@ namespace ponto_digital_final.Controllers {
             return View ();
         }
 
-        public IActionResult ApagarAdmin (string id) {
-            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
-            usuarioRepository.RemoverUsuario (usuarioRetornado);
-            return RedirectToAction ("ListarUsuarios", "Dashboard");
-        }   
         public IActionResult AlterarPermissao (string id) {
             var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
             usuarioRepository.AlterarPermissao (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
         }
 
-
         public IActionResult ApagarUsuario (string id) {
             var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
             usuarioRepository.RemoverUsuario (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
+        }
+
+        public IActionResult AprovarDepoimento (string id) {
+            var depoimentoRetornado = depoimentoRepository.ObterPor (ulong.Parse (id));
+            depoimentoRepository.AprovarDepoimento (depoimentoRetornado);
+            return RedirectToAction ("Depoimentos", "Dashboard");
+        }
+        public IActionResult ReprovarDepoimento (string id) {
+            var depoimentoRetornado = depoimentoRepository.ObterPor (ulong.Parse (id));
+            depoimentoRepository.ReprovarDepoimento (depoimentoRetornado);
+            return RedirectToAction ("Depoimentos", "Dashboard");
         }
 
         void RecuperarUserLogado () {

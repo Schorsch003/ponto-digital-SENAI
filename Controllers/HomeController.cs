@@ -15,55 +15,57 @@ namespace ponto_digital_final.Controllers {
         private const string SESSION_EMAIL = "_EMAIL-USUARIO";
         private const string SESSION_SENHA = "_SENHA-USUARIO";
         private UsuarioRepository usuarioRepository = new UsuarioRepository ();
+        private DepoimentoRepository depoimentoRepository = new DepoimentoRepository ();
 
         public IActionResult Index () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult Pacotes () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult QuemSomos () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult ComoUsar () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult Faq () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
         public IActionResult Avaliacoes () {
-            RecuperarUserLogado();
+            ViewData["avaliacoes"] = depoimentoRepository.Listar ();
+            RecuperarUserLogado ();
             return View ();
         }
 
         [HttpPost]
         public IActionResult RetornarAvaliacao (IFormCollection form) {
-            var depoimentoRepository = new DepoimentoRepository();
-            var depoimento = new Depoimento();
+            var depoimentoRepository = new DepoimentoRepository ();
+            var depoimento = new Depoimento ();
 
             depoimento.NomeUsuario = form["nome"];
-            depoimento.Nota = uint.Parse(form["rating"]);
+            depoimento.Nota = uint.Parse (form["rating"]);
             depoimento.Conteudo = form["comentario"];
-            depoimentoRepository.Inserir(depoimento);
-            return RedirectToAction("Index", "Home");
+            depoimento.Status = 'e';
+            depoimentoRepository.Inserir (depoimento);
+            return RedirectToAction ("Index", "Home");
         }
         public IActionResult Sac () {
-            RecuperarUserLogado();
+            RecuperarUserLogado ();
             return View ();
         }
 
-
-        void RecuperarUserLogado(){
+        void RecuperarUserLogado () {
             var email = HttpContext.Session.GetString (SESSION_EMAIL) == null ? "" : HttpContext.Session.GetString (SESSION_EMAIL);
             var usuario = usuarioRepository.ObterPor (email);
             // System.Console.WriteLine (HttpContext.Session.GetString (SESSION_EMAIL));

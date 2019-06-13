@@ -16,7 +16,7 @@ namespace ponto_digital_SENAI.Repositories {
             }
             depoimento.ID = (ulong) File.ReadAllLines (PATH).Length + 1;
 
-            string dadosDepoimento = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo}\n";
+            string dadosDepoimento = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};{depoimento.Status}\n";
             File.AppendAllText (PATH, dadosDepoimento);
             return depoimento;
         }
@@ -30,9 +30,52 @@ namespace ponto_digital_SENAI.Repositories {
                 depoimento.NomeUsuario = dados[1];
                 depoimento.Nota = uint.Parse (dados[2]);
                 depoimento.Conteudo = dados[3];
+                depoimento.Status = char.Parse (dados[4]);
                 depoimentos.Add (depoimento);
             }
             return depoimentos;
+        }
+
+        public Depoimento AprovarDepoimento (Depoimento depoimento) {
+            var registros = File.ReadAllLines (PATH);
+            for (int i = 0; i < registros.Length; i++) {
+                if (registros[i] == null) {
+                    continue;
+                }
+                var dados = registros[i].Split (';');
+                if (ulong.Parse (dados[0]) == depoimento.ID) {
+                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};a";
+                }
+            }
+            System.Console.WriteLine("foi certinho");
+            File.WriteAllLines (PATH, registros);
+            return depoimento;
+        }
+
+        public Depoimento ReprovarDepoimento (Depoimento depoimento) {
+            var registros = File.ReadAllLines (PATH);
+            for (int i = 0; i < registros.Length; i++) {
+                if (registros[i] == null) {
+                    continue;
+                }
+                var dados = registros[i].Split (';');
+                if (ulong.Parse (dados[0]) == depoimento.ID) {
+                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};r";
+                }
+            }
+            System.Console.WriteLine("foi certinho");
+            File.WriteAllLines (PATH, registros);
+            return depoimento;
+        }
+
+        public Depoimento ObterPor (ulong id) {
+            var lista = Listar ();
+            foreach (var item in lista) {
+                if (item.ID == id) {
+                    return item;
+                }
+            }
+            return null;
         }
     }
 }

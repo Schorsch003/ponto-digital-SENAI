@@ -6,6 +6,7 @@
     ViewData["TituloPag"] = "Depoimentos";
 }
 
+<div class="conteudo">
 <table> 
     <thead>
         <th>ID</th>
@@ -17,16 +18,18 @@
     </thead>
     <tbody>
             @foreach(var item in ViewData["depoimentos"] as List<Depoimento>){
-                if(!item.Equals(null)){
+                if(!item.Equals(null) && item.Status == 'e'){
                 <tr>    
                     <td>@item.ID</td>
                     <td>@item.NomeUsuario</td>
                     <td>@item.Conteudo</td>
                     <td>@item.Nota</td>
-                    <td><a href="" style="background-color:blue; color:black">X</a> </td>
-                    <td><a style="background-color:red; color:black">X</a> </td>
+                    <td><a href='@Url.Action("AprovarDepoimento", "Dashboard")?id=@item.ID' style="background-color:blue; color:black">X</a> </td>
+                    <td><a href='@Url.Action("ReprovarDepoimento", "Dashboard")?id=@item.ID'style="background-color:red; color:black">X</a> </td>
                 </tr>
                 }
             }
     </tbody>
 </table>
+
+</div>
