@@ -49,7 +49,7 @@ namespace ponto_digital_final.Controllers {
         }
 
         [HttpPost]
-        public IActionResult RetornarAvaliacao (IFormCollection form) {
+        public IActionResult RetornarAvaliacao (IFormCollection form) { 
             var depoimentoRepository = new DepoimentoRepository ();
             var depoimento = new Depoimento ();
 

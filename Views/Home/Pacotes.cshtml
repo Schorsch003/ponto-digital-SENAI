@@ -3,6 +3,7 @@
 
 @{
 ViewData["TituloPag"] = "Pacotes";
+var user = ViewData["Usuario"];
 }
 <section class="introd">
     <h2>Pacotes</h2>
@@ -53,8 +54,11 @@ ViewData["TituloPag"] = "Pacotes";
             </ul>
 
                 }
-                
+            @if(user != null){
             <a class="comprar" onclick='alert("Compra solicitada")'>Comprar</a>
+            }else{
+            <a class="comprar" onclick='alert("Login necessário")'>Comprar</a>
+            }
             </div>
                 }
         </div>
