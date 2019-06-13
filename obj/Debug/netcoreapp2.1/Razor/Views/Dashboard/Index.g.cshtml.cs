@@ -90,7 +90,7 @@ using ponto_digital_SENAI.Models;
             WriteLiteral("</h2>\r\n\r\n<ul>\r\n    <li>");
             EndContext();
             BeginContext(409, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1e48dfb3e224464b037edb667d5166a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "514ab427d9c4408d9cea17be787cabdd", async() => {
                 BeginContext(467, 15, true);
                 WriteLiteral("Listar Usuários");
                 EndContext();
@@ -114,7 +114,7 @@ using ponto_digital_SENAI.Models;
             WriteLiteral("</li>\r\n    <li>");
             EndContext();
             BeginContext(501, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f0c0f9b46054ff0a5da00ea4907ae0a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bc4a563aa284bf8bbc60e34a6c3f77f", async() => {
                 BeginContext(556, 18, true);
                 WriteLiteral("Listar Depoimentos");
                 EndContext();

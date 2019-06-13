@@ -55,9 +55,9 @@ var user = ViewData["Usuario"];
 
                 }
             @if(user != null){
-            <a class="comprar" onclick='alert("Compra solicitada")'>Comprar</a>
+            <a class="comprar" onclick='alert(" Compra solicitada")'>Comprar</a>
             }else{
-            <a class="comprar" onclick='alert("Login necessário")'>Comprar</a>
+            <a href='@Url.Action("Login","Cadastro")' class="comprar" onclick='alert("Login necessário")'>Comprar</a>
             }
             </div>
                 }

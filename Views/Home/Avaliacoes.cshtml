@@ -29,7 +29,11 @@ var avaliacoes = ViewData["avaliacoes"];
                 <br />
                 <textarea name="comentario" id="textarea1" cols="40" rows="20" placeholder="Deixe seu comentário"></textarea>
                 <br />
-                <input id="enviar" type="submit" value="►" onclick='alert("Depoimento enviado!")'>
+                @if(user != null){
+                    <input id="enviar" type="submit" value="►" onclick='alert("Depoimento enviado!")'>
+                }else{
+                    <a href='@Url.Action("Login","Cadastro")' id="enviar" onclick='alert("Login necessário!")' style="padding:0.3em; background-color:gray">ENVIAR ►</a>
+                }
         </form> 
     </div>
         @foreach(var item in avaliacoes as List<Depoimento>){
