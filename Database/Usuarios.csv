@@ -1,2 +1,5 @@
-1;Administrador ;admin@agoravai.com;admin;01/01/0001; true
-2;Gabriel Schorsch Amadeu;gabrielschorschgsa@gmail.com;senha;20/03/2003; false
+1;Administrador ;admin@agoravai.com;admin;01/01/0001;true
+2;Gabriel Schorsch;gabrielschorschgsa@gmail.com;senha;20/03/2003;false
+3;Teste ;teste@gmail.com;teste;01/01/2001;false
+4;Daniel ;daniel@gmail.com;daniel;04/02/2002;false
+5;TEsSTETE ;TEsSTETE@gmail.com;123431232;31/03/0131;false

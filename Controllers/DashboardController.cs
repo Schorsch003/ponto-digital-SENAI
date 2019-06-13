@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ponto_digital_final.Models;
 using ponto_digital_final.Repositories;
 using ponto_digital_SENAI.Repositories;
 
@@ -13,9 +15,6 @@ namespace ponto_digital_final.Controllers {
 
         public IActionResult Index () {
             var usuario = usuarioRepository.ObterPor (HttpContext.Session.GetString (SESSION_EMAIL));
-            if (usuario == null) {
-                usuario = usuarioRepository.ObterAdmPor (HttpContext.Session.GetString (SESSION_EMAIL));
-            }
             ViewData["Usuario"] = usuario;
             RecuperarUserLogado ();
             return View ();
@@ -23,19 +22,22 @@ namespace ponto_digital_final.Controllers {
 
         public IActionResult ListarUsuarios () {
             var usuarios = usuarioRepository.Listar ();
+            var admins = new List<Usuario> ();
             ViewData["usuarios"] = usuarios;
-            System.Console.WriteLine ("USERS: " + usuarios.Count);
-            var admins = usuarioRepository.ListarAdmins ();
+            foreach (var item in usuarios) {
+                if (item.EhAdmin) {
+                    admins.Add (item);
+                }
+            }
+
             ViewData["admins"] = admins;
+            System.Console.WriteLine ("USERS: " + (usuarios.Count - admins.Count));
             System.Console.WriteLine ("ADMS: " + admins.Count);
 
             if (usuarioRepository.Listar () == null) {
                 System.Console.WriteLine ("lista usuarios vindo nula");
             }
-            if (usuarioRepository.ListarAdmins () == null) {
-                System.Console.WriteLine ("lista admins vindo nula");
 
-            }
             RecuperarUserLogado ();
             return View ();
         }
@@ -47,19 +49,20 @@ namespace ponto_digital_final.Controllers {
             return View ();
         }
 
-        public IActionResult ApagarAdmin (string email) {
-            var usuarioRetornado = usuarioRepository.ObterAdmPor (ulong.Parse (email));
+        public IActionResult ApagarAdmin (string id) {
+            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
             usuarioRepository.RemoverUsuario (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
-        }
-        public IActionResult RetirarAdmin (string email) {
-            var usuarioRetornado = usuarioRepository.ObterAdmPor (ulong.Parse (email));
+        }   
+        public IActionResult AlterarPermissao (string id) {
+            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
             usuarioRepository.AlterarPermissao (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
         }
 
-        public IActionResult ApagarUsuario (string email) {
-            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (email));
+
+        public IActionResult ApagarUsuario (string id) {
+            var usuarioRetornado = usuarioRepository.ObterPor (ulong.Parse (id));
             usuarioRepository.RemoverUsuario (usuarioRetornado);
             return RedirectToAction ("ListarUsuarios", "Dashboard");
         }

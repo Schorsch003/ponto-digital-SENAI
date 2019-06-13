@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ponto_digital_final.Models;
@@ -24,6 +25,7 @@ namespace ponto_digital_final.Controllers {
             usuario.EhAdmin = false;
 
             System.Console.WriteLine (form["nome"]);
+            System.Console.WriteLine(usuario.EhAdmin);
 
             usuarioRepository.InserirUsuario (usuario);
             return RedirectToAction ("Index", "Home");
@@ -35,7 +37,7 @@ namespace ponto_digital_final.Controllers {
 
         [HttpPost]
         public IActionResult RealizarLogin (IFormCollection form) {
-            var listaAdmins = usuarioRepository.ListarAdmins ();
+            var lista = usuarioRepository.Listar ();
             var email = form["email"];
             var senha = form["senha"];
 

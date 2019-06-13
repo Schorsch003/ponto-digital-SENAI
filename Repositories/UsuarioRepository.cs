@@ -6,7 +6,6 @@ using ponto_digital_final.Models;
 namespace ponto_digital_final.Repositories {
     public class UsuarioRepository {
         private const string PATH = "Database/Usuarios.csv";
-        private const string PATH_ADMIN = "Database/Admins.csv";
 
         private List<Usuario> usuarios;
         private List<Usuario> admins = new List<Usuario> ();
@@ -17,7 +16,7 @@ namespace ponto_digital_final.Repositories {
                 File.Create (PATH).Close ();
             }
             user.ID = (ulong) File.ReadAllLines (PATH).Length + 1;
-            string info_usuario = $"{user.ID};{user.Nome} ;{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()};{user.EhAdmin}";
+            string info_usuario = $"{user.ID};{user.Nome} ;{user.Email};{user.Senha};{user.DataNascimento.ToShortDateString()};{user.EhAdmin.ToString()}\n";
             File.AppendAllText (PATH, info_usuario);
 
             return user;
@@ -36,27 +35,10 @@ namespace ponto_digital_final.Repositories {
             return usuarios;
         }
 
-        public List<Usuario> ListarAdmins () {
-            var lista = Listar ();
-            foreach (var item in lista) {
-                if (item.EhAdmin) {
-                    admins.Add (item);
-                }
-
-            }
-            return admins;
-        }
-
         public Usuario ObterPor (string email) {
             var listaUsuarios = Listar ();
-            var listaAdmins = ListarAdmins ();
             if (!listaUsuarios.Equals (null)) {
                 foreach (var item in listaUsuarios) {
-                    if (!item.Equals (null) && email.Equals (item.Email)) {
-                        return item;
-                    }
-                }
-                foreach (var item in listaAdmins) {
                     if (!item.Equals (null) && email.Equals (item.Email)) {
                         return item;
                     }
@@ -68,7 +50,6 @@ namespace ponto_digital_final.Repositories {
 
         public Usuario ObterPor (ulong id) {
             var listaUsuarios = Listar ();
-            var listaAdmins = ListarAdmins ();
             if (!listaUsuarios.Equals (null)) {
                 foreach (var item in listaUsuarios) {
                     if (!item.Equals (null) && id.Equals (item.ID)) {
@@ -76,35 +57,8 @@ namespace ponto_digital_final.Repositories {
                     }
                 }
             }
-
             return null;
         }
-
-        public Usuario ObterAdmPor (ulong id) {
-            var listaAdmins = ListarAdmins ();
-            if (!listaAdmins.Equals (null)) {
-                foreach (var item in listaAdmins) {
-                    if (!item.Equals (null) && id.Equals (item.ID)) {
-                        return item;
-                    }
-                }
-            }
-
-            return null;
-        }
-        public Usuario ObterAdmPor (string email) {
-            var listaAdmins = ListarAdmins ();
-            if (!listaAdmins.Equals (null)) {
-                foreach (var item in listaAdmins) {
-                    if (!item.Equals (null) && email.Equals (item.ID)) {
-                        return item;
-                    }
-                }
-            }
-
-            return null;
-        }
-
         public Usuario ConverterEmObjeto (string registro) {
 
             var dados = registro.Split (";");
@@ -136,30 +90,39 @@ namespace ponto_digital_final.Repositories {
         }
 
         public Usuario AlterarPermissao (Usuario user) {
-            if (user.EhAdmin) {
-                user.EhAdmin = false;
-            } else {
-                user.EhAdmin = true;
+            var registros = File.ReadAllLines (PATH);
+            string linha = "";
+            for (int i = 0; i < registros.Length; i++) {
+                var dados = registros[i].Split (";");
+                if (bool.Parse (dados[5]) && ulong.Parse (dados[0]) == user.ID) {
+                    dados[5] = "false";
+                    linha = $"{dados[0]};{dados[1]};{dados[2]};{dados[3]};{dados[4]};{dados[5]}";
+                    System.Console.WriteLine ("virou falso");
+                    registros[i] = linha;
+                } else if (!bool.Parse (dados[5]) && ulong.Parse (dados[0]) == user.ID) {
+                    dados[5] = "true";
+                    System.Console.WriteLine ("virou true");
+                    linha = $"{dados[0]};{dados[1]};{dados[2]};{dados[3]};{dados[4]};{dados[5]}";
+                    registros[i] = linha;
+                }
             }
+            File.WriteAllLines (PATH, registros);
             return user;
         }
         public Usuario RemoverUsuario (Usuario user) {
             var registros = File.ReadAllLines (PATH);
             Console.WriteLine ("AAAA");
-
-            for (int i = 0; i < registros.Length; i++) {
-                if (string.IsNullOrEmpty (registros[i])) {
-                    Console.WriteLine ("BBBB");
-                    continue;
-                }
-                var dados = registros[i].Split (";");
-                if (user.ID.Equals (ulong.Parse (dados[0]))) {
-                    registros[i] = null;
-                    Console.WriteLine ("CCCC");
-                    File.WriteAllLines (PATH_ADMIN, registros);
-                    return user;
+            for (int j = 0; j < registros.Length; j++) {
+                var dados = registros[j].Split (";");
+                if (user.ID == ulong.Parse (dados[0])) {
+                    registros[j] = "";
+                    System.Console.WriteLine ("BBBBBB");
+                    break;  
                 }
             }
+            System.Console.WriteLine ("CCCC");
+            File.WriteAllLines (PATH, registros);
+
             return user;
         }
 
