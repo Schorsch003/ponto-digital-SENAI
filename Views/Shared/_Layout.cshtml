@@ -2,10 +2,10 @@
 @using ponto_digital_final.Repositories;
 
 @{
-    var user = (Usuario) ViewData["Usuario"];
-    UsuarioRepository usuarioRepository = new UsuarioRepository();
-    
-}  
+var user = (Usuario) ViewData["Usuario"];
+UsuarioRepository usuarioRepository = new UsuarioRepository();
+
+}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,17 +16,21 @@
     <link rel="stylesheet" href="~/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     @if("Cadastro".Equals(ViewData["TituloPag"]) || "Login".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/cadastro_login.css">
+    <link rel="stylesheet" href="~/css/cadastro_login.css">
     } else if("SAC".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/sac.css">
+    <link rel="stylesheet" href="~/css/sac.css">
     } else if("Pacotes".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/pacotes.css">
+    <link rel="stylesheet" href="~/css/pacotes.css">
     } else if("Avaliacoes".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/avaliacoes.css">
+    <link rel="stylesheet" href="~/css/avaliacoes.css">
     } else if ("FAQ".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/faq.css">
+    <link rel="stylesheet" href="~/css/faq.css">
     } else if("Listar Usuarios".Equals(ViewData["TituloPag"]) || "Depoimentos".Equals(ViewData["TituloPag"])){
-        <link rel="stylesheet" href="~/css/tabelas.css">
+    <link rel="stylesheet" href="~/css/tabelas.css">
+    } else if("Quem somos".Equals(ViewData["TituloPag"])){
+    <link rel="stylesheet" href="~/css/quem_somos.css">
+    } else if("Dashboard".Equals(ViewData["TituloPag"])){
+    <link rel="stylesheet" href="~/css/dashboard.css">
     }
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>@ViewData["TituloPag"] - Ponto Digital</title>
@@ -35,35 +39,44 @@
 <body>
     <header class="container">
 
-    <nav class="navegacao flex">
-        @{
+        <nav class="navegacao flex">
+            @{
             Html.RenderPartial("_HeaderNavBar");
-        }
-    </nav>
+            }
+        </nav>
     </header>
-    <main>
+    <main class="conteudo">
         @RenderBody()
-    </main> 
-            <footer class="rodape flex">
-            <div class="quem_somos">
-                <h2>Agora Vai!</h2>
-                <a asp-controller="Home" asp-action="QuemSomos">Quem somos?</a>
-            </div>
+    </main>
+    <footer class="rodape flex">
+        <div class="quem_somos">
+            <h2>Agora Vai!</h2>
+            <a asp-controller="Home" asp-action="QuemSomos">Quem somos?</a>
+        </div>
 
-            <div class="pacotes_foot">
-                <h2>Pacotes</h2>
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Pacotes">Tipos de pacotes</a></li>
-                </ul>
-            </div>
+        <div class="pacotes_foot">
+            <h2>Pacotes</h2>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Pacotes">Tipos de pacotes</a></li>
+            </ul>
+        </div>
 
-            <div class="SAC">
-                <a asp-controller="Home" asp-action="Sac">  <h2>SAC</h2> </a>
-                <p>emailpontodigital@email.com</p>
-                <p>(11) 12345-6789</p>
-                <p>Alameda Barão de Limeira, 539</p>
-            </div>
+        <div class="SAC">
+            <a asp-controller="Home" asp-action="Sac">
+                <h2>SAC</h2>
+            </a>
+            <p>emailpontodigital@email.com</p>
+            <p>(11) 12345-6789</p>
+            <p>Alameda Barão de Limeira, 539</p>
+        </div>
     </footer>
+
+    <script>
+        $("span").click(function () {
+            
+        });
+
+    </script>
 </body>
 
 </html>

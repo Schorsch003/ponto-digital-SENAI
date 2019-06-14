@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using ponto_digital_final.Models;
@@ -16,7 +17,7 @@ namespace ponto_digital_SENAI.Repositories {
             }
             depoimento.ID = (ulong) File.ReadAllLines (PATH).Length + 1;
 
-            string dadosDepoimento = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};{depoimento.Status}\n";
+            string dadosDepoimento = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};{depoimento.Status};{depoimento.DataEnvio}\n";
             File.AppendAllText (PATH, dadosDepoimento);
             return depoimento;
         }
@@ -31,6 +32,7 @@ namespace ponto_digital_SENAI.Repositories {
                 depoimento.Nota = uint.Parse (dados[2]);
                 depoimento.Conteudo = dados[3];
                 depoimento.Status = char.Parse (dados[4]);
+                depoimento.DataEnvio = DateTime.Parse(dados[5]);
                 depoimentos.Add (depoimento);
             }
             return depoimentos;
@@ -44,7 +46,7 @@ namespace ponto_digital_SENAI.Repositories {
                 }
                 var dados = registros[i].Split (';');
                 if (ulong.Parse (dados[0]) == depoimento.ID) {
-                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};a";
+                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};a;{depoimento.DataEnvio}";
                 }
             }
             System.Console.WriteLine("foi certinho");
@@ -60,7 +62,7 @@ namespace ponto_digital_SENAI.Repositories {
                 }
                 var dados = registros[i].Split (';');
                 if (ulong.Parse (dados[0]) == depoimento.ID) {
-                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};r";
+                    registros[i] = $"{depoimento.ID};{depoimento.NomeUsuario};{depoimento.Nota};{depoimento.Conteudo};r;{depoimento.DataEnvio}";
                 }
             }
             System.Console.WriteLine("foi certinho");

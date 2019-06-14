@@ -4,12 +4,13 @@
 @{
 ViewData["TituloPag"] = "Avaliacoes";
 var user = (Usuario) ViewData["usuario"];
-var avaliacoes = ViewData["avaliacoes"];
+var avaliacoes = ViewData["avaliacoes"] as List<Depoimento>;
+int contador = 0;
 }
 <div class="conteudo">
-    
+
 <h2>Deixe sua avaliação do produto</h2>
-<div class="flex" style="justify-content:space-around;">
+<div class="separe" style="justify-content:space-around;">
     <div id="enviar">
         <form action="RetornarAvaliacao" method="POST">
             <div class="rating">
@@ -36,14 +37,20 @@ var avaliacoes = ViewData["avaliacoes"];
                 }
         </form> 
     </div>
-        @foreach(var item in avaliacoes as List<Depoimento>){
-    <div id="avaliacoesAprovadas"> 
-            @if(item.Status == 'a'){
+    <div class="avaliacoesAprovadas"> 
+        
+        @foreach(var item in avaliacoes ){
+            @if(item.Status == 'a' && contador < 4){
+            <div class="depoimento">
+
             <h3>@item.NomeUsuario</h3>
             <p>@item.Nota / 5</p>
             <p>@item.Conteudo</p>
+            </div>
+            contador++;
+        }
+
         }
     </div>
-        }
 </div>
 </div>

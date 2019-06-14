@@ -1,35 +1,31 @@
-.conteudo{
-    background-color:#889ead;
+.conteudo {
+    background-color: #0094CC;
     justify-content: space-around;
 }
 
-
-.conteudo p{
+.conteudo p {
     color: white;
     margin-left: 1.5em;
     font-size: 1.3em;
 }
 
 .conteudo h2 {
-    color:white;    
+    color: white;
     text-align: center;
-    font-size:2em;
-    padding:0.5em 0;
+    font-size: 2em;
+    padding: 0.5em 0;
 }
 
-    
-.imagens img{
+.imagens img {
     height: 50vh;
     margin: 0 1em;
 }
 
-.texto_abaixo p{
+.texto_abaixo p {
     margin: 1.5em 3em
-
 }
 
-
-.mapa{
+.mapa {
     padding: 0 1em;
     width: 99%;
     height: 25vh;

@@ -46,7 +46,7 @@ namespace ponto_digital_final {
             app.UseHttpsRedirection ();
             app.UseStaticFiles ();
             app.UseCookiePolicy ();
-            app.UseSession();
+            app.UseSession ();
 
             app.UseMvc (routes => {
                 routes.MapRoute (

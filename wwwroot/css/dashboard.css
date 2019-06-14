@@ -1,0 +1,35 @@
+.menu{
+    justify-content: space-around;
+}
+
+h2{
+    text-align: center;
+    font-size:2em;
+    color:white;
+}
+
+.menu a{
+    font-size:3em;
+}
+
+.contador{
+    font-size:5em;
+    margin: 0 30%;
+    padding:0.5em;
+    background-color:rgb(82, 0, 158, 0.4);
+    border-radius: 1080px;
+
+}
+
+.divider{
+    margin-top:10vh;
+    justify-content: space-around;
+}
+
+.titulo{
+    font-size:3em;
+}
+
+.conteudo{
+    height:64vh;
+}

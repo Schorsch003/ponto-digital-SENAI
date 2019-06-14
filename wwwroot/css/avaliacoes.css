@@ -1,42 +1,42 @@
-
-#textarea1{
+#textarea1 {
     resize: none;
 }
 
-.conteudo{
+.conteudo {
     background-color: #0094CC;
     height: 80vh;
-
 }
 
+.separe{
+    display:flex;
+}
 
-.conteudo h2{
+.conteudo h2 {
     text-align: start;
     margin-left: 2em;
 }
 
-.conteudo form{
+.conteudo form {
     padding-left: 4em;
 }
 
-.conteudo form input{
+.conteudo form input {
     margin-bottom: 1em;
-    width:22.2em;
+    width: 22.2em;
 }
 
-.conteudo form input[type="submit"]{
+.conteudo form input[type="submit"] {
     width: 5em;
     margin-top: 1em;
-    margin-left:17em;
-    
+    margin-left: 17em;
 }
 
-.rating{
-    margin:0  0 2em 5em;
+.rating {
+    margin: 0 0 2em 1em;
 }
 
-.rating label{
-    padding:1em 10px;    
+.rating label {
+    padding: 1em 10px;
 }
 
 .rating {
@@ -44,34 +44,70 @@
     height: 46px;
     padding: 0 10px;
 }
-.rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+
+.rating:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
 }
-.rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+
+.rating:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
-.rating:not(:checked) > label:before {
+
+#enviar{
+    margin: 0 10vw;
+}
+
+.avaliacoesAprovadas{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.depoimento {
+    box-shadow: 1px 0px 0px 1px rgb(243, 171, 2), 0px 1px 1px 0px rgb(243, 171, 2), 1px 1px 1px 1px rgb(243, 171, 2), 1px 1px 1px 1px rgb(243, 171, 2);
+    padding:1em;
+    height:20vh;
+    width:20vw;
+    border-radius: 5px;
+    background-color: rgb(0, 95, 129, 0.5);
+    margin: 2em;
+
+}
+
+.depoimento h3{
+    margin: 2em auto;
+    color: rgb(0, 12, 122);
+}
+
+.rating:not(:checked)>label:before {
     content: '★ ';
 }
-.rating > input:checked ~ label {
-    color: #ffc700;    
+
+.rating>input:checked~label {
+    color: #ffc700;
 }
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+
+.rating:not(:checked)>label:hover, .rating:not(:checked)>label:hover~label {
+    color: #deb217;
 }
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
+
+.rating>input:checked+label:hover, .rating>input:checked+label:hover~label, .rating>input:checked~label:hover, .rating>input:checked~label:hover~label, .rating>label:hover~input:checked~label {
     color: #c59b08;
 }
 
+
+@media (max-width:800px){
+    .separe{
+        display:block;
+    }
+
+    .separe div{
+        margin: 1em auto;
+    }
+}

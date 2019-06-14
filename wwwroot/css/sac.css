@@ -34,7 +34,7 @@ main{
 }
 
 #imagens_btn{
-    margin-left: 90%;
+    margin-left: 95%;
 }
 
 #imagens_btn button{
@@ -42,4 +42,5 @@ main{
     background-color: white;
     padding: 0 1em;
     border:1px thin black; 
+    
 }

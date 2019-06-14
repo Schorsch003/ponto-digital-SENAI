@@ -4,6 +4,7 @@
 
 @{
     ViewData["TituloPag"] = "Depoimentos";
+    var contador = 0;
 }
 
 <div class="conteudo">
@@ -27,6 +28,10 @@
                     <td><a href='@Url.Action("AprovarDepoimento", "Dashboard")?id=@item.ID' style="background-color:blue; color:black">X</a> </td>
                     <td><a href='@Url.Action("ReprovarDepoimento", "Dashboard")?id=@item.ID'style="background-color:red; color:black">X</a> </td>
                 </tr>
+                 contador++;
+                }
+                @if(contador == 0){
+                    <h4> NENHUM DEPOIMENTO PENDENTE </h4>
                 }
             }
     </tbody>

@@ -49,7 +49,7 @@ namespace ponto_digital_final.Controllers {
         }
 
         [HttpPost]
-        public IActionResult RetornarAvaliacao (IFormCollection form) { 
+        public IActionResult RetornarAvaliacao (IFormCollection form) {
             var depoimentoRepository = new DepoimentoRepository ();
             var depoimento = new Depoimento ();
 
@@ -57,7 +57,9 @@ namespace ponto_digital_final.Controllers {
             depoimento.Nota = uint.Parse (form["rating"]);
             depoimento.Conteudo = form["comentario"];
             depoimento.Status = 'e';
+            depoimento.DataEnvio = DateTime.Now;
             depoimentoRepository.Inserir (depoimento);
+
             return RedirectToAction ("Index", "Home");
         }
         public IActionResult Sac () {
