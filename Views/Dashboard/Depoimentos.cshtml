@@ -8,8 +8,9 @@
 }
 
 <div class="conteudo">
-<table> 
-    <thead>
+<table>
+
+    <thead style="margin: 2em">
         <th>ID</th>
         <th>Nome</th>
         <th>Comentário</th>
@@ -19,7 +20,7 @@
     </thead>
     <tbody>
             @foreach(var item in ViewData["depoimentos"] as List<Depoimento>){
-                if(!item.Equals(null) && item.Status == 'e'){
+                @if(!item.Equals(null) && item.Status == 'e'){
                 <tr>    
                     <td>@item.ID</td>
                     <td>@item.NomeUsuario</td>
@@ -28,13 +29,16 @@
                     <td><a href='@Url.Action("AprovarDepoimento", "Dashboard")?id=@item.ID' style="background-color:blue; color:black">X</a> </td>
                     <td><a href='@Url.Action("ReprovarDepoimento", "Dashboard")?id=@item.ID'style="background-color:red; color:black">X</a> </td>
                 </tr>
-                 contador++;
+                contador++;
                 }
-                @if(contador == 0){
-                    <h4> NENHUM DEPOIMENTO PENDENTE </h4>
-                }
+                
             }
     </tbody>
 </table>
+
+    @if(contador == 0){
+                    <h4 style="text-align:center; padding:2em; font-size:2em"> NENHUM DEPOIMENTO PENDENTE </h4>
+                    contador++;
+                }
 
 </div>
