@@ -77,7 +77,7 @@ int contador = 0;
             WriteLiteral("<div class=\"conteudo\">\r\n\r\n<h2>Deixe sua avaliação do produto</h2>\r\n<div class=\"separe\" style=\"justify-content:space-around;\">\r\n    <div id=\"enviar\">\r\n        ");
             EndContext();
             BeginContext(403, 1434, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7177aa16ff5448bc8d6e87d953530601", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b024bd5f5eb469ba387abf7fd1f1283", async() => {
                 BeginContext(450, 586, true);
                 WriteLiteral(@"
             <div class=""rating"">

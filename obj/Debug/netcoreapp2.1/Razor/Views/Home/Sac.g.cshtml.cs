@@ -75,7 +75,7 @@ using ponto_digital_final.Models;
                 ");
             EndContext();
             BeginContext(356, 738, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c91787e3b2e74b53b51db75330d3dcca", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad1b0c67e5f149338a188f1888dd6d2c", async() => {
                 BeginContext(386, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -120,7 +120,7 @@ WriteAttributeValue("", 484, user.Nome, 484, 10, false);
                         <button id=""send"">");
                 EndContext();
                 BeginContext(993, 39, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "dd22daf02935487697363cc65dd294fb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ef19667bcd194b819b0fed61dc4ef3eb", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

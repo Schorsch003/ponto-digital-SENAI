@@ -10,21 +10,21 @@ List<Depoimento> depoimentos = ViewData["depoimentos"] as List<Depoimento>;
 int contadorPendentes = 0;
 }
 
-                <h2>Bem vindo(a), @user.Nome</h2>
-                <div class="flex divider">
-                    <div class="unflex">
-                        <p class="contador">@users.Count</p>
-                        <p class="titulo">Usuarios cadastrados</p>
-                    </div>
-                    @foreach(var item in depoimentos){
-                    if(item.Status == 'e'){
-                    contadorPendentes++;
-                    }
-                    }
-                    <div class="unflex">
-                        <p class="contador">@contadorPendentes</p>
-                        <p class="titulo">Depoimentos pendentes</p>
-                    </div>
+<h2>Bem vindo(a), @user.Nome</h2>
+    <div class="flex divider">
+        <div class="unflex">
+            <p class="contador">@users.Count</p>
+            <p class="titulo">Usuarios cadastrados</p>
+        </div>
+        @foreach(var item in depoimentos){
+        if(item.Status == 'e'){
+        contadorPendentes++;
+        }
+        }
+    <div class="unflex">
+        <p class="contador">@contadorPendentes</p>
+        <p class="titulo">Depoimentos pendentes</p>
+    </div>
 
 
-                </div>
+</div>

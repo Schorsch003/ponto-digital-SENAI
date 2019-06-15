@@ -62,7 +62,7 @@ ViewData["TituloPag"] = "Cadastro";
             WriteLiteral("\r\n<section class=\"formulario\">\r\n\r\n    <h2>Cadastro</h2>\r\n    <div class=\"forms\">\r\n\r\n        ");
             EndContext();
             BeginContext(136, 767, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc001f5d43bd405b8d65fbbef18b4489", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03604f6d9ee54ca388874426a03510d7", async() => {
                 BeginContext(184, 712, true);
                 WriteLiteral(@"
             <input type=""text"" placeholder=""Nome"" name=""nome"" minlength=""3"" required>
